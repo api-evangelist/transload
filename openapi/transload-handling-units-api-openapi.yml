@@ -1,0 +1,34 @@
+openapi: 3.0.3
+info:
+  title: Pipeline Backend Admin Handling Units API
+  version: 0.1.0
+security:
+- bearerAuth: []
+tags:
+- name: Handling Units
+paths:
+  /v1/handling-units/{handlingUnit}/latest-result:
+    get:
+      parameters:
+      - schema:
+          type: string
+          format: uuid
+        in: query
+        name: customerId
+        required: false
+      - schema:
+          type: string
+          minLength: 1
+        in: path
+        name: handlingUnit
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Handling Units
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

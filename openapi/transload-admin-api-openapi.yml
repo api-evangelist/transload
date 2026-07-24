@@ -1,0 +1,575 @@
+openapi: 3.0.3
+info:
+  title: Pipeline Backend Admin API
+  version: 0.1.0
+security:
+- bearerAuth: []
+tags:
+- name: Admin
+paths:
+  /v1/admin/overview:
+    get:
+      parameters:
+      - schema:
+          type: string
+          format: date-time
+        in: query
+        name: since
+        required: false
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Admin
+  /v1/admin/pipeline/gates:
+    get:
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Admin
+  /v1/admin/pipeline/pause:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                stage:
+                  type: string
+                  enum:
+                  - dewarping
+                  - classification
+                  - measurement
+                reason:
+                  type: string
+              required:
+              - stage
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Admin
+  /v1/admin/pipeline/resume:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                stage:
+                  type: string
+                  enum:
+                  - dewarping
+                  - classification
+                  - measurement
+              required:
+              - stage
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Admin
+  /v1/admin/pipeline/customer-gates:
+    get:
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Admin
+  /v1/admin/pipeline/effective-gates:
+    get:
+      parameters:
+      - schema:
+          type: string
+          format: uuid
+        in: query
+        name: customerId
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Admin
+  /v1/admin/pipeline/customer-pause:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                customerId:
+                  type: string
+                  format: uuid
+                stage:
+                  type: string
+                  enum:
+                  - dewarping
+                  - classification
+                  - measurement
+                reason:
+                  type: string
+              required:
+              - customerId
+              - stage
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Admin
+  /v1/admin/pipeline/customer-resume:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                customerId:
+                  type: string
+                  format: uuid
+                stage:
+                  type: string
+                  enum:
+                  - dewarping
+                  - classification
+                  - measurement
+              required:
+              - customerId
+              - stage
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Admin
+  /v1/admin/pipeline/customer-reset:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                customerId:
+                  type: string
+                  format: uuid
+                stage:
+                  type: string
+                  enum:
+                  - dewarping
+                  - classification
+                  - measurement
+                reason:
+                  type: string
+                  default: manual customer stage reset
+              required:
+              - customerId
+              - stage
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Admin
+  /admin:
+    get:
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Admin
+  /admin/resources/{resourceId}:
+    get:
+      parameters:
+      - schema:
+          type: string
+        in: path
+        name: resourceId
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Admin
+  /admin/api/resources/{resourceId}/search/{query}:
+    get:
+      parameters:
+      - schema:
+          type: string
+        in: path
+        name: resourceId
+        required: true
+      - schema:
+          type: string
+        in: path
+        name: query
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Admin
+  /admin/resources/{resourceId}/actions/{action}:
+    get:
+      parameters:
+      - schema:
+          type: string
+        in: path
+        name: resourceId
+        required: true
+      - schema:
+          type: string
+        in: path
+        name: action
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Admin
+  /admin/api/resources/{resourceId}/actions/{action}:
+    get:
+      parameters:
+      - schema:
+          type: string
+        in: path
+        name: resourceId
+        required: true
+      - schema:
+          type: string
+        in: path
+        name: action
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Admin
+    post:
+      parameters:
+      - schema:
+          type: string
+        in: path
+        name: resourceId
+        required: true
+      - schema:
+          type: string
+        in: path
+        name: action
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Admin
+  /admin/api/resources/{resourceId}/actions/{action}/{query}:
+    get:
+      parameters:
+      - schema:
+          type: string
+        in: path
+        name: resourceId
+        required: true
+      - schema:
+          type: string
+        in: path
+        name: action
+        required: true
+      - schema:
+          type: string
+        in: path
+        name: query
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Admin
+  /admin/resources/{resourceId}/records/{recordId}/{action}:
+    get:
+      parameters:
+      - schema:
+          type: string
+        in: path
+        name: resourceId
+        required: true
+      - schema:
+          type: string
+        in: path
+        name: recordId
+        required: true
+      - schema:
+          type: string
+        in: path
+        name: action
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Admin
+  /admin/api/resources/{resourceId}/records/{recordId}/{action}:
+    get:
+      parameters:
+      - schema:
+          type: string
+        in: path
+        name: resourceId
+        required: true
+      - schema:
+          type: string
+        in: path
+        name: recordId
+        required: true
+      - schema:
+          type: string
+        in: path
+        name: action
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Admin
+    post:
+      parameters:
+      - schema:
+          type: string
+        in: path
+        name: resourceId
+        required: true
+      - schema:
+          type: string
+        in: path
+        name: recordId
+        required: true
+      - schema:
+          type: string
+        in: path
+        name: action
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Admin
+  /admin/resources/{resourceId}/bulk/{action}:
+    get:
+      parameters:
+      - schema:
+          type: string
+        in: path
+        name: resourceId
+        required: true
+      - schema:
+          type: string
+        in: path
+        name: action
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Admin
+  /admin/api/resources/{resourceId}/bulk/{action}:
+    get:
+      parameters:
+      - schema:
+          type: string
+        in: path
+        name: resourceId
+        required: true
+      - schema:
+          type: string
+        in: path
+        name: action
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Admin
+    post:
+      parameters:
+      - schema:
+          type: string
+        in: path
+        name: resourceId
+        required: true
+      - schema:
+          type: string
+        in: path
+        name: action
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Admin
+  /admin/api/resources/{resourceId}/search:
+    get:
+      parameters:
+      - schema:
+          type: string
+        in: path
+        name: resourceId
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Admin
+  /admin/api/dashboard:
+    get:
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Admin
+  /admin/pages/{pageName}:
+    get:
+      parameters:
+      - schema:
+          type: string
+        in: path
+        name: pageName
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Admin
+  /admin/api/pages/{pageName}:
+    get:
+      parameters:
+      - schema:
+          type: string
+        in: path
+        name: pageName
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Admin
+    post:
+      parameters:
+      - schema:
+          type: string
+        in: path
+        name: pageName
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Admin
+  /admin/frontend/assets/icomoon.css:
+    get:
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Admin
+  /admin/frontend/assets/icomoon.eot:
+    get:
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Admin
+  /admin/frontend/assets/icomoon.svg:
+    get:
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Admin
+  /admin/frontend/assets/icomoon.ttf:
+    get:
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Admin
+  /admin/frontend/assets/icomoon.woff:
+    get:
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Admin
+  /admin/frontend/assets/app.bundle.js:
+    get:
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Admin
+  /admin/frontend/assets/global.bundle.js:
+    get:
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Admin
+  /admin/frontend/assets/design-system.bundle.js:
+    get:
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Admin
+  /admin/frontend/assets/logo.svg:
+    get:
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Admin
+  /admin/frontend/assets/logo-mini.svg:
+    get:
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Admin
+  /admin/frontend/assets/components.bundle.js:
+    get:
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Admin
+  /admin/login:
+    get:
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Admin
+    post:
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Admin
+  /admin/logout:
+    get:
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Admin
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

@@ -1,0 +1,451 @@
+openapi: 3.0.3
+info:
+  title: Pipeline Backend Admin Internal API
+  version: 0.1.0
+security:
+- bearerAuth: []
+tags:
+- name: Internal
+paths:
+  /internal/jobs/{jobId}/run:
+    post:
+      parameters:
+      - schema:
+          type: string
+          format: uuid
+        in: path
+        name: jobId
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Internal
+  /v1/internal/koch-pending-measurement-qa-handling-units:
+    get:
+      parameters:
+      - schema:
+          type: integer
+          minimum: 1
+          default: 1000
+        in: query
+        name: limit
+        required: false
+      - schema:
+          type: integer
+          default: 0
+        in: query
+        name: offset
+        required: false
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Internal
+  /v1/internal/import-reference-measurements:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                customerId:
+                  type: string
+                  format: uuid
+                sourceSystem:
+                  type: string
+                  minLength: 1
+                importBatchId:
+                  type: string
+                  minLength: 1
+                measurements:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      matchedBy:
+                        type: string
+                        enum:
+                        - customer_scan_id
+                        - handling_unit_id
+                        - shipment_id
+                        - frame_request_id
+                      matchedValue:
+                        type: string
+                        minLength: 1
+                      lengthCm:
+                        type: integer
+                      widthCm:
+                        type: integer
+                      heightCm:
+                        type: integer
+                      sourceRecordId:
+                        type: string
+                        minLength: 1
+                    required:
+                    - matchedBy
+                    - matchedValue
+                    - lengthCm
+                    - widthCm
+                    - heightCm
+              required:
+              - customerId
+              - sourceSystem
+              - measurements
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Internal
+  /v1/internal/process-classification:
+    post:
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Internal
+  /v1/internal/classification-result:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                job_id:
+                  type: string
+                  minLength: 1
+                status:
+                  type: string
+                  enum:
+                  - completed
+                  - failed
+                result:
+                  type: object
+                  properties:
+                    scanner_present:
+                      type: boolean
+                    is_measurable:
+                      type: boolean
+                      nullable: true
+                    confidence:
+                      type: number
+                      nullable: true
+                    gap:
+                      type: number
+                      nullable: true
+                    best_frame:
+                      type: string
+                      nullable: true
+                    review_flags:
+                      type: array
+                      items:
+                        type: string
+                      nullable: true
+                    signals:
+                      type: object
+                      additionalProperties: {}
+                      nullable: true
+                    segmentation:
+                      nullable: true
+                  required:
+                  - scanner_present
+                  - confidence
+                  - gap
+                error:
+                  type: string
+              required:
+              - job_id
+              - status
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Internal
+  /v1/internal/classification-recover-polled:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                sinceHours:
+                  type: integer
+                  default: 48
+                limit:
+                  type: integer
+                  default: 500
+                dryRun:
+                  type: boolean
+                  default: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Internal
+  /v1/internal/classification-reset:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                customerId:
+                  type: string
+                  format: uuid
+                siteId:
+                  type: string
+                  format: uuid
+                scanIds:
+                  type: array
+                  items:
+                    type: string
+                    format: uuid
+                since:
+                  type: string
+                  format: date-time
+                reason:
+                  type: string
+                  default: manual classification reset
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Internal
+  /v1/internal/process-dewarping:
+    post:
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Internal
+  /v1/internal/dewarping-reset:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                customerId:
+                  type: string
+                  format: uuid
+                siteId:
+                  type: string
+                  format: uuid
+                scanIds:
+                  type: array
+                  items:
+                    type: string
+                    format: uuid
+                reason:
+                  type: string
+                  default: manual dewarping reset
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Internal
+  /v1/internal/dewarping-reject-stuck:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                scanIds:
+                  type: array
+                  items:
+                    type: string
+                    format: uuid
+                reason:
+                  type: string
+                  default: manual reject-stuck (TECH-163 cleanup)
+              required:
+              - scanIds
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Internal
+  /v1/internal/measurement-ready-scans:
+    get:
+      parameters:
+      - schema:
+          type: integer
+          minimum: 1
+        in: query
+        name: limit
+        required: false
+      - schema:
+          type: integer
+          default: 0
+        in: query
+        name: offset
+        required: false
+      - schema:
+          type: string
+          format: uuid
+        in: query
+        name: customerId
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: scanIds
+        required: false
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Internal
+  /v1/internal/measurement-reset:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                customerId:
+                  type: string
+                  format: uuid
+                siteId:
+                  type: string
+                  format: uuid
+                scanIds:
+                  type: array
+                  items:
+                    type: string
+                    format: uuid
+                reason:
+                  type: string
+                  default: manual reset
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Internal
+  /v1/internal/measurement-results:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                scanId:
+                  type: string
+                  format: uuid
+                handlingUnits:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      handlingUnitId:
+                        type: string
+                        minLength: 1
+                      lengthCm:
+                        type: number
+                      widthCm:
+                        type: number
+                      heightCm:
+                        type: number
+                      artifacts:
+                        type: object
+                        additionalProperties: {}
+                        default: {}
+                      resultPayload:
+                        type: object
+                        additionalProperties: {}
+                        default: {}
+                    required:
+                    - lengthCm
+                    - widthCm
+                    - heightCm
+              required:
+              - scanId
+              - handlingUnits
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Internal
+  /v1/internal/reviewed-scan-images:
+    get:
+      parameters:
+      - schema:
+          type: string
+          format: uuid
+        in: query
+        name: customerId
+        required: true
+      - schema:
+          type: integer
+          minimum: 1
+          default: 50
+        in: query
+        name: limit
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: cursor
+        required: false
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Internal
+  /v1/internal/process-privacy-blur:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                limit:
+                  type: integer
+                  default: 25
+                withinDays:
+                  type: integer
+                  default: 14
+                scanIds:
+                  type: array
+                  items:
+                    type: string
+                    format: uuid
+              default:
+                limit: 25
+                withinDays: 14
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Internal
+  /v1/internal/process-measurement:
+    post:
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Internal
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

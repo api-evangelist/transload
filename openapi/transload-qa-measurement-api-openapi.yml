@@ -1,0 +1,378 @@
+openapi: 3.0.3
+info:
+  title: Pipeline Backend Admin Qa Measurement API
+  version: 0.1.0
+security:
+- bearerAuth: []
+tags:
+- name: Qa Measurement
+paths:
+  /v1/qa-measurement/pending:
+    get:
+      parameters:
+      - schema:
+          type: integer
+          minimum: 1
+          default: 50
+        in: query
+        name: limit
+        required: false
+      - schema:
+          type: integer
+          default: 0
+        in: query
+        name: offset
+        required: false
+      - schema:
+          type: string
+          format: uuid
+        in: query
+        name: customerId
+        required: false
+      - schema:
+          type: number
+        in: query
+        name: kochMinMaeCm
+        required: false
+      - schema:
+          type: number
+        in: query
+        name: kochMaxMaeCm
+        required: false
+      - schema:
+          type: number
+        in: query
+        name: kochMaxLengthDeviationCm
+        required: false
+      - schema:
+          type: number
+        in: query
+        name: kochMaxWidthDeviationCm
+        required: false
+      - schema:
+          type: number
+        in: query
+        name: kochMaxHeightDeviationCm
+        required: false
+      - schema:
+          type: boolean
+        in: query
+        name: kochApplyScaleFactor
+        required: false
+      - schema:
+          type: string
+          enum:
+          - t30_mae
+          - per_dim_5cm_count
+          default: t30_mae
+        in: query
+        name: kochScaleFactorObjective
+        required: false
+      - schema:
+          type: boolean
+        in: query
+        name: kochMissingGroundTruth
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: cameraViews
+        required: false
+      - schema:
+          type: array
+          items:
+            type: string
+            format: uuid
+          default: []
+        in: query
+        name: excludedCustomerIds
+        required: false
+      - schema:
+          type: string
+          format: date-time
+        in: query
+        name: capturedAfter
+        required: false
+      - schema:
+          type: string
+          format: date-time
+        in: query
+        name: capturedBefore
+        required: false
+      - schema:
+          type: number
+          default: 0
+        in: query
+        name: minGap
+        required: false
+      - schema:
+          type: string
+          enum:
+          - oldest
+          - newest
+          - value
+          default: oldest
+        in: query
+        name: sortOrder
+        required: false
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Qa Measurement
+  /v1/qa-measurement/summary:
+    get:
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Qa Measurement
+  /v1/qa-measurement/{scanId}/frames:
+    get:
+      parameters:
+      - schema:
+          type: string
+          format: uuid
+        in: path
+        name: scanId
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Qa Measurement
+  /v1/qa-measurement/{scanId}/review:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              oneOf:
+              - type: object
+                properties:
+                  decision:
+                    enum:
+                    - accepted
+                required:
+                - decision
+              - type: object
+                properties:
+                  decision:
+                    enum:
+                    - rejected
+                  reason:
+                    type: string
+                    enum:
+                    - bad_bounding_box_fit
+                    - bad_measurements
+                    - bad_classification
+                    - other
+                required:
+                - decision
+      parameters:
+      - schema:
+          type: string
+          format: uuid
+        in: path
+        name: scanId
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Qa Measurement
+  /v1/qa-measurement/{scanId}/review/reset:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                stageRunId:
+                  type: string
+                  format: uuid
+              required:
+              - stageRunId
+      parameters:
+      - schema:
+          type: string
+          format: uuid
+        in: path
+        name: scanId
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Qa Measurement
+  /v1/qa-measurement/reviews/reset:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reviews:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      scanId:
+                        type: string
+                        format: uuid
+                      stageRunId:
+                        type: string
+                        format: uuid
+                    required:
+                    - scanId
+                    - stageRunId
+              required:
+              - reviews
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Qa Measurement
+  /v1/qa-measurement/bulk-review:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reviews:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      scanId:
+                        type: string
+                        format: uuid
+                      decision:
+                        type: string
+                        enum:
+                        - accepted
+                        - rejected
+                      reason:
+                        type: string
+                        enum:
+                        - bad_bounding_box_fit
+                        - bad_measurements
+                        - bad_classification
+                        - other
+                    required:
+                    - scanId
+                    - decision
+              required:
+              - reviews
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Qa Measurement
+  /v1/qa-measurement/stats:
+    get:
+      parameters:
+      - schema:
+          type: string
+          format: uuid
+        in: query
+        name: customerId
+        required: false
+      - schema:
+          type: string
+          format: date-time
+        in: query
+        name: from
+        required: false
+      - schema:
+          type: string
+          format: date-time
+        in: query
+        name: to
+        required: false
+      - schema:
+          type: boolean
+        in: query
+        name: includeKochDetails
+        required: false
+      - schema:
+          type: number
+        in: query
+        name: kochDeviationThresholdCm
+        required: false
+      - schema:
+          type: number
+        in: query
+        name: kochMaxMaeCm
+        required: false
+      - schema:
+          type: number
+        in: query
+        name: kochMaxLengthDeviationCm
+        required: false
+      - schema:
+          type: number
+        in: query
+        name: kochMaxWidthDeviationCm
+        required: false
+      - schema:
+          type: number
+        in: query
+        name: kochMaxHeightDeviationCm
+        required: false
+      - schema:
+          type: boolean
+        in: query
+        name: kochApplyScaleFactor
+        required: false
+      - schema:
+          type: string
+          enum:
+          - t30_mae
+          - per_dim_5cm_count
+          default: t30_mae
+        in: query
+        name: kochScaleFactorObjective
+        required: false
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Qa Measurement
+  /v1/qa-measurement/{scanId}/overlay:
+    get:
+      parameters:
+      - schema:
+          type: string
+        in: query
+        name: expires
+        required: true
+      - schema:
+          type: string
+        in: query
+        name: sig
+        required: true
+      - schema:
+          type: string
+          format: uuid
+        in: path
+        name: scanId
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Qa Measurement
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

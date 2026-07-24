@@ -1,0 +1,110 @@
+openapi: 3.0.3
+info:
+  title: Pipeline Backend Admin Reference Measurements API
+  version: 0.1.0
+security:
+- bearerAuth: []
+tags:
+- name: Reference Measurements
+paths:
+  /v1/reference-measurements:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                customerId:
+                  type: string
+                  format: uuid
+                matchedBy:
+                  type: string
+                  enum:
+                  - customer_scan_id
+                  - handling_unit_id
+                  - shipment_id
+                  - frame_request_id
+                matchedValue:
+                  type: string
+                  minLength: 1
+                lengthCm:
+                  type: integer
+                widthCm:
+                  type: integer
+                heightCm:
+                  type: integer
+                sourceSystem:
+                  type: string
+                  minLength: 1
+                sourceRecordId:
+                  type: string
+                  minLength: 1
+                importBatchId:
+                  type: string
+                  minLength: 1
+              required:
+              - customerId
+              - matchedBy
+              - matchedValue
+              - lengthCm
+              - widthCm
+              - heightCm
+              - sourceSystem
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Reference Measurements
+    get:
+      parameters:
+      - schema:
+          type: string
+          format: uuid
+        in: query
+        name: customerId
+        required: true
+      - schema:
+          type: string
+          format: uuid
+        in: query
+        name: scanId
+        required: false
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Reference Measurements
+  /v1/reference-measurements/{id}:
+    get:
+      parameters:
+      - schema:
+          type: string
+          format: uuid
+        in: path
+        name: id
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Reference Measurements
+    delete:
+      parameters:
+      - schema:
+          type: string
+          format: uuid
+        in: path
+        name: id
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Reference Measurements
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

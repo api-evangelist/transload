@@ -1,0 +1,143 @@
+openapi: 3.0.3
+info:
+  title: Pipeline Backend Admin Customers API
+  version: 0.1.0
+security:
+- bearerAuth: []
+tags:
+- name: Customers
+paths:
+  /v1/customers:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                slug:
+                  type: string
+                  minLength: 1
+                name:
+                  type: string
+                  minLength: 1
+                storageProvider:
+                  type: string
+                  enum:
+                  - azure_blob
+                  - gcs
+                  - localfs
+                storageAccount:
+                  type: string
+                  minLength: 1
+                storageContainer:
+                  type: string
+                  minLength: 1
+                logoUrl:
+                  type: string
+                  format: uri
+                  minLength: 1
+                metadata:
+                  type: object
+                  additionalProperties: {}
+              required:
+              - slug
+              - name
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Customers
+    get:
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Customers
+  /v1/customers/{customerId}:
+    get:
+      parameters:
+      - schema:
+          type: string
+          format: uuid
+        in: path
+        name: customerId
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Customers
+    patch:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  minLength: 1
+                slug:
+                  type: string
+                  minLength: 1
+                status:
+                  type: string
+                  enum:
+                  - active
+                  - disabled
+                storageProvider:
+                  type: string
+                  enum:
+                  - azure_blob
+                  - gcs
+                  - localfs
+                  nullable: true
+                storageAccount:
+                  type: string
+                  minLength: 1
+                  nullable: true
+                storageContainer:
+                  type: string
+                  minLength: 1
+                  nullable: true
+                logoUrl:
+                  type: string
+                  format: uri
+                  minLength: 1
+                  nullable: true
+                metadata:
+                  type: object
+                  additionalProperties: {}
+      parameters:
+      - schema:
+          type: string
+          format: uuid
+        in: path
+        name: customerId
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Customers
+    delete:
+      parameters:
+      - schema:
+          type: string
+          format: uuid
+        in: path
+        name: customerId
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Customers
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

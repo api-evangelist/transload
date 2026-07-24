@@ -1,0 +1,88 @@
+openapi: 3.0.3
+info:
+  title: Pipeline Backend Admin Ai Results API
+  version: 0.1.0
+security:
+- bearerAuth: []
+tags:
+- name: Ai Results
+paths:
+  /v1/ai-results:
+    get:
+      parameters:
+      - schema:
+          type: string
+          format: uuid
+        in: query
+        name: customerId
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: handlingUnit
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: shipmentId
+        required: false
+      - schema:
+          type: string
+          enum:
+          - measurement_v1
+          - object_detection_v1
+        in: query
+        name: resultType
+        required: false
+      - schema:
+          type: boolean
+          default: false
+        in: query
+        name: includeUnreviewed
+        required: false
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Ai Results
+  /v1/ai-results/{resultId}:
+    get:
+      parameters:
+      - schema:
+          type: string
+          format: uuid
+        in: path
+        name: resultId
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Ai Results
+  /v1/ai-results/{resultId}/artifacts/{artifactKind}/url:
+    post:
+      parameters:
+      - schema:
+          type: string
+          format: uuid
+        in: path
+        name: resultId
+        required: true
+      - schema:
+          type: string
+          enum:
+          - image
+          - modelPly
+        in: path
+        name: artifactKind
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Ai Results
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

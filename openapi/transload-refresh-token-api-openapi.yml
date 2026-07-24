@@ -1,0 +1,21 @@
+openapi: 3.0.3
+info:
+  title: Pipeline Backend Admin Refresh Token API
+  version: 0.1.0
+security:
+- bearerAuth: []
+tags:
+- name: Refresh Token
+paths:
+  /refresh-token:
+    post:
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Refresh Token
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

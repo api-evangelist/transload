@@ -1,0 +1,111 @@
+openapi: 3.0.3
+info:
+  title: Pipeline Backend Admin Processing Jobs API
+  version: 0.1.0
+security:
+- bearerAuth: []
+tags:
+- name: Processing Jobs
+paths:
+  /v1/processing-jobs:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                customerId:
+                  type: string
+                  format: uuid
+                jobType:
+                  type: string
+                  enum:
+                  - measurement
+                  - ai_inference
+                workflowKey:
+                  type: string
+                  minLength: 1
+                idempotencyKey:
+                  type: string
+                input:
+                  type: object
+                  additionalProperties: {}
+                inputAssets:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      mediaAssetId:
+                        type: string
+                        format: uuid
+                      inputRole:
+                        type: string
+                        enum:
+                        - primary
+                        - secondary
+                        default: primary
+                      sortOrder:
+                        type: integer
+                        default: 0
+                    required:
+                    - mediaAssetId
+              required:
+              - customerId
+              - jobType
+              - workflowKey
+              - inputAssets
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Processing Jobs
+    get:
+      parameters:
+      - schema:
+          type: string
+          format: uuid
+        in: query
+        name: customerId
+        required: false
+      - schema:
+          type: string
+          enum:
+          - queued
+          - running
+          - succeeded
+          - failed
+          - cancelled
+        in: query
+        name: status
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: workflowKey
+        required: false
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Processing Jobs
+  /v1/processing-jobs/{jobId}:
+    get:
+      parameters:
+      - schema:
+          type: string
+          format: uuid
+        in: path
+        name: jobId
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Processing Jobs
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

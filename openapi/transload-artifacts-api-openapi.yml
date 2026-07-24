@@ -1,0 +1,36 @@
+openapi: 3.0.3
+info:
+  title: Pipeline Backend Admin Artifacts API
+  version: 0.1.0
+security:
+- bearerAuth: []
+tags:
+- name: Artifacts
+paths:
+  /v1/artifacts/local/{resultId}/{artifactKind}:
+    get:
+      parameters:
+      - schema:
+          type: string
+          format: uuid
+        in: path
+        name: resultId
+        required: true
+      - schema:
+          type: string
+          enum:
+          - image
+          - modelPly
+        in: path
+        name: artifactKind
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Artifacts
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

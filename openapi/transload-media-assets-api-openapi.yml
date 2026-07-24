@@ -1,0 +1,172 @@
+openapi: 3.0.3
+info:
+  title: Pipeline Backend Admin Media Assets API
+  version: 0.1.0
+security:
+- bearerAuth: []
+tags:
+- name: Media Assets
+paths:
+  /v1/media-assets:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                customerId:
+                  type: string
+                  format: uuid
+                siteId:
+                  type: string
+                  format: uuid
+                cameraId:
+                  type: string
+                  format: uuid
+                externalId:
+                  type: string
+                kind:
+                  type: string
+                  enum:
+                  - snapshot
+                  - clip
+                  - recording
+                storage:
+                  type: object
+                  properties:
+                    provider:
+                      type: string
+                      enum:
+                      - azure_blob
+                      - gcs
+                      - localfs
+                    account:
+                      type: string
+                      minLength: 1
+                    container:
+                      type: string
+                      minLength: 1
+                    path:
+                      type: string
+                      minLength: 1
+                    signedUrl:
+                      type: string
+                      format: uri
+                    signedUrlExpiresAt:
+                      type: string
+                      format: date-time
+                  required:
+                  - account
+                  - container
+                  - path
+                capturedAtStart:
+                  type: string
+                  format: date-time
+                capturedAtEnd:
+                  type: string
+                  format: date-time
+                mimeType:
+                  type: string
+                checksumSha256:
+                  type: string
+                sizeBytes:
+                  type: integer
+                durationMs:
+                  type: integer
+                width:
+                  type: integer
+                height:
+                  type: integer
+                handlingUnitId:
+                  type: string
+                shipmentId:
+                  type: string
+                sourceScanId:
+                  type: string
+                sourceScanTimestamp:
+                  type: string
+                  format: date-time
+                sourceMetadata:
+                  type: object
+                  additionalProperties: {}
+              required:
+              - customerId
+              - siteId
+              - cameraId
+              - kind
+              - storage
+              - capturedAtStart
+              - handlingUnitId
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Media Assets
+    get:
+      parameters:
+      - schema:
+          type: string
+          format: uuid
+        in: query
+        name: customerId
+        required: false
+      - schema:
+          type: string
+          format: uuid
+        in: query
+        name: siteId
+        required: false
+      - schema:
+          type: string
+          format: uuid
+        in: query
+        name: cameraId
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: handlingUnitId
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: shipmentId
+        required: false
+      - schema:
+          type: string
+          format: date-time
+        in: query
+        name: from
+        required: false
+      - schema:
+          type: string
+          format: date-time
+        in: query
+        name: to
+        required: false
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Media Assets
+  /v1/media-assets/{mediaAssetId}:
+    get:
+      parameters:
+      - schema:
+          type: string
+          format: uuid
+        in: path
+        name: mediaAssetId
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Media Assets
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

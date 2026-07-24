@@ -1,0 +1,301 @@
+openapi: 3.0.3
+info:
+  title: Pipeline Backend Admin Sites API
+  version: 0.1.0
+security:
+- bearerAuth: []
+tags:
+- name: Sites
+paths:
+  /v1/sites:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                customerId:
+                  type: string
+                  format: uuid
+                slug:
+                  type: string
+                  minLength: 1
+                name:
+                  type: string
+                  minLength: 1
+                address:
+                  type: string
+                  minLength: 1
+                  nullable: true
+                timezone:
+                  type: string
+                  minLength: 1
+                  default: UTC
+                metadata:
+                  type: object
+                  additionalProperties: {}
+                scanSource:
+                  type: string
+                  enum:
+                  - db
+                  - scandrop
+                  nullable: true
+                customerDatabase:
+                  type: object
+                  properties:
+                    scanQuery:
+                      type: string
+                      nullable: true
+                    scanQueryAutodetect:
+                      type: boolean
+                      default: false
+                    timezone:
+                      type: string
+                      minLength: 1
+                      default: UTC
+                  nullable: true
+                scanFields:
+                  type: object
+                  properties:
+                    xField:
+                      type: string
+                      default: locXPos
+                    yField:
+                      type: string
+                      default: locYPos
+                    zField:
+                      type: string
+                      nullable: true
+                      default: null
+                    zDefaultCm:
+                      type: number
+                      default: 100
+                    zoneField:
+                      type: string
+                      nullable: true
+                      default: null
+                    handlingUnitField:
+                      type: string
+                      default: handlingUnitId
+                    shipmentField:
+                      type: string
+                      nullable: true
+                      default: null
+                  nullable: true
+                captureConfig:
+                  type: object
+                  properties:
+                    pollIntervalSeconds:
+                      type: number
+                      default: 2
+                    toleranceSeconds:
+                      type: number
+                      default: 2
+                    scanLookbackSeconds:
+                      type: number
+                      default: 300
+                    localFrameTtlHours:
+                      type: number
+                      default: 48
+                    bufferHardMaxSeconds:
+                      type: number
+                      default: 600
+                    bufferFps:
+                      type: number
+                      default: 30
+                    fovMarginSide:
+                      type: number
+                      default: 0.05
+                    fovMarginTop:
+                      type: number
+                      default: 0.2
+                  nullable: true
+                scandropConfig:
+                  type: object
+                  properties:
+                    enabled:
+                      type: boolean
+                      default: false
+                    directory:
+                      type: string
+                    processedDirectory:
+                      type: string
+                  nullable: true
+              required:
+              - customerId
+              - name
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Sites
+    get:
+      parameters:
+      - schema:
+          type: string
+          format: uuid
+        in: query
+        name: customerId
+        required: false
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Sites
+  /v1/sites/{siteId}:
+    get:
+      parameters:
+      - schema:
+          type: string
+          format: uuid
+        in: path
+        name: siteId
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Sites
+    patch:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  minLength: 1
+                slug:
+                  type: string
+                  minLength: 1
+                address:
+                  type: string
+                  minLength: 1
+                  nullable: true
+                timezone:
+                  type: string
+                  minLength: 1
+                metadata:
+                  type: object
+                  additionalProperties: {}
+                scanSource:
+                  type: string
+                  enum:
+                  - db
+                  - scandrop
+                  nullable: true
+                customerDatabase:
+                  type: object
+                  properties:
+                    scanQuery:
+                      type: string
+                      nullable: true
+                    scanQueryAutodetect:
+                      type: boolean
+                      default: false
+                    timezone:
+                      type: string
+                      minLength: 1
+                      default: UTC
+                  nullable: true
+                scanFields:
+                  type: object
+                  properties:
+                    xField:
+                      type: string
+                      default: locXPos
+                    yField:
+                      type: string
+                      default: locYPos
+                    zField:
+                      type: string
+                      nullable: true
+                      default: null
+                    zDefaultCm:
+                      type: number
+                      default: 100
+                    zoneField:
+                      type: string
+                      nullable: true
+                      default: null
+                    handlingUnitField:
+                      type: string
+                      default: handlingUnitId
+                    shipmentField:
+                      type: string
+                      nullable: true
+                      default: null
+                  nullable: true
+                captureConfig:
+                  type: object
+                  properties:
+                    pollIntervalSeconds:
+                      type: number
+                      default: 2
+                    toleranceSeconds:
+                      type: number
+                      default: 2
+                    scanLookbackSeconds:
+                      type: number
+                      default: 300
+                    localFrameTtlHours:
+                      type: number
+                      default: 48
+                    bufferHardMaxSeconds:
+                      type: number
+                      default: 600
+                    bufferFps:
+                      type: number
+                      default: 30
+                    fovMarginSide:
+                      type: number
+                      default: 0.05
+                    fovMarginTop:
+                      type: number
+                      default: 0.2
+                  nullable: true
+                scandropConfig:
+                  type: object
+                  properties:
+                    enabled:
+                      type: boolean
+                      default: false
+                    directory:
+                      type: string
+                    processedDirectory:
+                      type: string
+                  nullable: true
+      parameters:
+      - schema:
+          type: string
+          format: uuid
+        in: path
+        name: siteId
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Sites
+    delete:
+      parameters:
+      - schema:
+          type: string
+          format: uuid
+        in: path
+        name: siteId
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Sites
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

@@ -1,0 +1,48 @@
+openapi: 3.0.3
+info:
+  title: Pipeline Backend Admin Exports API
+  version: 0.1.0
+security:
+- bearerAuth: []
+tags:
+- name: Exports
+paths:
+  /v1/exports/measurements:
+    get:
+      parameters:
+      - schema:
+          type: string
+          format: uuid
+        in: query
+        name: customerId
+        required: true
+      - schema:
+          type: string
+          format: date-time
+        in: query
+        name: from
+        required: false
+      - schema:
+          type: string
+          format: date-time
+        in: query
+        name: to
+        required: false
+      - schema:
+          type: string
+          enum:
+          - csv
+          default: csv
+        in: query
+        name: format
+        required: false
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Exports
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

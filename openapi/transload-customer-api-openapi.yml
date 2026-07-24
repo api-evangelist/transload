@@ -1,0 +1,138 @@
+openapi: 3.0.3
+info:
+  title: Pipeline Backend Admin Customer API
+  version: 0.1.0
+security:
+- bearerAuth: []
+tags:
+- name: Customer
+paths:
+  /v1/customer/auth/request-link:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+              required:
+              - email
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Customer
+  /v1/customer/auth/verify:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                token:
+                  type: string
+                  minLength: 10
+                otp:
+                  type: string
+              required:
+              - token
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Customer
+  /v1/customer/auth/select-customer:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                customerId:
+                  type: string
+                  format: uuid
+              required:
+              - customerId
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Customer
+  /v1/customer/auth/logout:
+    post:
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Customer
+  /v1/customer/auth/session:
+    get:
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Customer
+  /v1/customer/data/handling-units:
+    get:
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Customer
+  /v1/customer/data/handling-units/export:
+    get:
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Customer
+  /v1/customer/data/shipments/{shipmentId}:
+    get:
+      parameters:
+      - schema:
+          type: string
+        in: path
+        name: shipmentId
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Customer
+  /v1/customer/data/handling-units/{handlingUnitId}:
+    get:
+      parameters:
+      - schema:
+          type: string
+        in: path
+        name: handlingUnitId
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Customer
+    delete:
+      parameters:
+      - schema:
+          type: string
+        in: path
+        name: handlingUnitId
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Customer
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

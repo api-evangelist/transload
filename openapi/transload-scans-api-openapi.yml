@@ -1,0 +1,251 @@
+openapi: 3.0.3
+info:
+  title: Pipeline Backend Admin Scans API
+  version: 0.1.0
+security:
+- bearerAuth: []
+tags:
+- name: Scans
+paths:
+  /v1/scans:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                customerId:
+                  type: string
+                  format: uuid
+                siteId:
+                  type: string
+                  format: uuid
+                capturedAt:
+                  type: string
+                  format: date-time
+                handlingUnitId:
+                  type: string
+                  minLength: 1
+                shipmentId:
+                  type: string
+                  minLength: 1
+                identifiers:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      type:
+                        type: string
+                        enum:
+                        - customer_scan_id
+                        - handling_unit_id
+                        - shipment_id
+                        - frame_request_id
+                      value:
+                        type: string
+                        minLength: 1
+                    required:
+                    - type
+                    - value
+                metadata:
+                  type: object
+                  additionalProperties: {}
+              required:
+              - customerId
+              - siteId
+              - capturedAt
+              - identifiers
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Scans
+    get:
+      parameters:
+      - schema:
+          type: string
+          format: uuid
+        in: query
+        name: customerId
+        required: true
+      - schema:
+          type: string
+          enum:
+          - ingestion
+          - dewarping
+          - classification
+          - measurement
+          - qa
+        in: query
+        name: stage
+        required: false
+      - schema:
+          type: string
+          enum:
+          - pending
+          - running
+          - succeeded
+          - failed
+          - skipped
+          - rejected
+        in: query
+        name: stageStatus
+        required: false
+      - schema:
+          type: string
+          format: date-time
+        in: query
+        name: capturedAfter
+        required: false
+      - schema:
+          type: string
+          format: date-time
+        in: query
+        name: capturedBefore
+        required: false
+      - schema:
+          type: integer
+          minimum: 1
+          default: 50
+        in: query
+        name: limit
+        required: false
+      - schema:
+          type: integer
+          default: 0
+        in: query
+        name: offset
+        required: false
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Scans
+  /v1/scans/stats:
+    get:
+      parameters:
+      - schema:
+          type: string
+          format: uuid
+        in: query
+        name: customerId
+        required: true
+      - schema:
+          type: string
+          format: date-time
+        in: query
+        name: since
+        required: false
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Scans
+  /v1/scans/{id}:
+    get:
+      parameters:
+      - schema:
+          type: string
+          format: uuid
+        in: path
+        name: id
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Scans
+  /v1/scans/{id}/stages/{stage}/start:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                operator:
+                  type: string
+                  minLength: 1
+                inputRef:
+                  type: object
+                  additionalProperties: {}
+      parameters:
+      - schema:
+          type: string
+          format: uuid
+        in: path
+        name: id
+        required: true
+      - schema:
+          type: string
+          enum:
+          - ingestion
+          - dewarping
+          - classification
+          - measurement
+          - qa
+        in: path
+        name: stage
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Scans
+  /v1/scans/{id}/stages/{stage}/complete:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status:
+                  type: string
+                  enum:
+                  - succeeded
+                  - failed
+                  - skipped
+                  - rejected
+                outputRef:
+                  type: object
+                  additionalProperties: {}
+                providerPayload:
+                  type: object
+                  additionalProperties: {}
+                error:
+                  type: string
+              required:
+              - status
+      parameters:
+      - schema:
+          type: string
+          format: uuid
+        in: path
+        name: id
+        required: true
+      - schema:
+          type: string
+          enum:
+          - ingestion
+          - dewarping
+          - classification
+          - measurement
+          - qa
+        in: path
+        name: stage
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Scans
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

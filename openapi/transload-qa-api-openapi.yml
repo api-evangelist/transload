@@ -1,0 +1,541 @@
+openapi: 3.0.3
+info:
+  title: Pipeline Backend Admin Qa API
+  version: 0.1.0
+security:
+- bearerAuth: []
+tags:
+- name: Qa
+paths:
+  /v1/qa/koch-reference-sync/request:
+    post:
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Qa
+  /v1/qa/leaderboard:
+    get:
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Qa
+  /v1/qa/leaderboard/daily:
+    get:
+      parameters:
+      - schema:
+          type: integer
+          minimum: 1
+          default: 7
+        in: query
+        name: days
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: tz
+        required: false
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Qa
+  /v1/qa/summary:
+    get:
+      parameters:
+      - schema:
+          type: string
+          format: uuid
+        in: query
+        name: siteId
+        required: false
+      - schema:
+          type: string
+          format: uuid
+        in: query
+        name: cameraId
+        required: false
+      - schema:
+          type: number
+          default: 0
+        in: query
+        name: minGap
+        required: false
+      - schema:
+          type: integer
+          default: 0
+        in: query
+        name: excludeOverlapSeconds
+        required: false
+      - schema:
+          type: boolean
+          default: false
+        in: query
+        name: hideNoScanner
+        required: false
+      - schema:
+          type: string
+          format: date-time
+        in: query
+        name: capturedAfter
+        required: false
+      - schema:
+          type: string
+          format: date-time
+        in: query
+        name: capturedBefore
+        required: false
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Qa
+  /v1/qa/{scanId}/review:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              oneOf:
+              - type: object
+                properties:
+                  decision:
+                    enum:
+                    - accepted
+                  kochScaleFactor:
+                    type: object
+                    properties:
+                      objective:
+                        type: string
+                        enum:
+                        - t30_mae
+                        - per_dim_5cm_count
+                    required:
+                    - objective
+                required:
+                - decision
+              - type: object
+                properties:
+                  decision:
+                    enum:
+                    - rejected
+                  reason:
+                    type: string
+                    enum:
+                    - ambiguous
+                    - bad_segmentation
+                    - item_not_measurable
+                    - mixed_pallet
+                    - no_scan_visible
+                    - wrong_item_selected
+                    - bad_bounding_box_fit
+                    - bad_measurements
+                    - other
+                    - barcode_not_attached
+                    - stacked_items
+                  correction:
+                    type: object
+                    properties:
+                      lengthCm:
+                        type: integer
+                      widthCm:
+                        type: integer
+                      heightCm:
+                        type: integer
+                      obbCornersPx:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            u:
+                              type: number
+                            v:
+                              type: number
+                          required:
+                          - u
+                          - v
+                    required:
+                    - lengthCm
+                    - widthCm
+                    - heightCm
+                    - obbCornersPx
+                required:
+                - decision
+      parameters:
+      - schema:
+          type: string
+          format: uuid
+        in: path
+        name: scanId
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Qa
+  /v1/qa/{scanId}/review/reset:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                stageRunId:
+                  type: string
+                  format: uuid
+              required:
+              - stageRunId
+      parameters:
+      - schema:
+          type: string
+          format: uuid
+        in: path
+        name: scanId
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Qa
+  /v1/qa/reviews/reset:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reviews:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      scanId:
+                        type: string
+                        format: uuid
+                      stageRunId:
+                        type: string
+                        format: uuid
+                    required:
+                    - scanId
+                    - stageRunId
+              required:
+              - reviews
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Qa
+  /v1/qa/stats:
+    get:
+      parameters:
+      - schema:
+          type: string
+          format: uuid
+        in: query
+        name: customerId
+        required: false
+      - schema:
+          type: string
+          format: date-time
+        in: query
+        name: from
+        required: false
+      - schema:
+          type: string
+          format: date-time
+        in: query
+        name: to
+        required: false
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Qa
+  /v1/qa/pending:
+    get:
+      parameters:
+      - schema:
+          type: integer
+          minimum: 1
+          default: 50
+        in: query
+        name: limit
+        required: false
+      - schema:
+          type: integer
+          default: 0
+        in: query
+        name: offset
+        required: false
+      - schema:
+          type: string
+          format: uuid
+        in: query
+        name: customerId
+        required: false
+      - schema:
+          type: number
+        in: query
+        name: kochMinMaeCm
+        required: false
+      - schema:
+          type: number
+        in: query
+        name: kochMaxMaeCm
+        required: false
+      - schema:
+          type: number
+        in: query
+        name: kochMaxLengthDeviationCm
+        required: false
+      - schema:
+          type: number
+        in: query
+        name: kochMaxWidthDeviationCm
+        required: false
+      - schema:
+          type: number
+        in: query
+        name: kochMaxHeightDeviationCm
+        required: false
+      - schema:
+          type: boolean
+        in: query
+        name: kochApplyScaleFactor
+        required: false
+      - schema:
+          type: string
+          enum:
+          - t30_mae
+          - per_dim_5cm_count
+          default: t30_mae
+        in: query
+        name: kochScaleFactorObjective
+        required: false
+      - schema:
+          type: boolean
+        in: query
+        name: kochMissingGroundTruth
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: cameraViews
+        required: false
+      - schema:
+          type: array
+          items:
+            type: string
+            format: uuid
+          default: []
+        in: query
+        name: excludedCustomerIds
+        required: false
+      - schema:
+          type: string
+          format: date-time
+        in: query
+        name: capturedAfter
+        required: false
+      - schema:
+          type: string
+          format: date-time
+        in: query
+        name: capturedBefore
+        required: false
+      - schema:
+          type: number
+          default: 0
+        in: query
+        name: minGap
+        required: false
+      - schema:
+          type: string
+          enum:
+          - oldest
+          - newest
+          - value
+          default: oldest
+        in: query
+        name: sortOrder
+        required: false
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Qa
+  /v1/qa/{scanId}/frames:
+    get:
+      parameters:
+      - schema:
+          type: string
+          format: uuid
+        in: path
+        name: scanId
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Qa
+  /v1/qa/{scanId}/overlay:
+    get:
+      parameters:
+      - schema:
+          type: string
+        in: query
+        name: expires
+        required: true
+      - schema:
+          type: string
+        in: query
+        name: sig
+        required: true
+      - schema:
+          type: string
+          format: uuid
+        in: path
+        name: scanId
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Qa
+  /v1/qa/camera-views:
+    get:
+      parameters:
+      - schema:
+          type: string
+          format: uuid
+        in: query
+        name: customerId
+        required: false
+      - schema:
+          type: array
+          items:
+            type: string
+            format: uuid
+          default: []
+        in: query
+        name: excludedCustomerIds
+        required: false
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Qa
+  /v1/qa/koch-auto-review-by-filter:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                kochMaxMaeCm:
+                  type: number
+                kochMaxLengthDeviationCm:
+                  type: number
+                kochMaxWidthDeviationCm:
+                  type: number
+                kochMaxHeightDeviationCm:
+                  type: number
+                kochApplyScaleFactor:
+                  type: boolean
+                kochScaleFactorObjective:
+                  type: string
+                  enum:
+                  - t30_mae
+                  - per_dim_5cm_count
+                  default: t30_mae
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Qa
+  /v1/qa/koch-auto-scale:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                kochScaleFactorObjective:
+                  type: string
+                  enum:
+                  - t30_mae
+                  - per_dim_5cm_count
+                  default: t30_mae
+              default:
+                kochScaleFactorObjective: t30_mae
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Qa
+  /v1/qa/auth/request-link:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+              required:
+              - email
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Qa
+  /v1/qa/auth/verify:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                token:
+                  type: string
+                  minLength: 10
+              required:
+              - token
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Qa
+  /v1/qa/auth/logout:
+    post:
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Qa
+  /v1/qa/auth/session:
+    get:
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Qa
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

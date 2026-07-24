@@ -1,0 +1,221 @@
+openapi: 3.0.3
+info:
+  title: Pipeline Backend Admin Ingestor API
+  version: 0.1.0
+security:
+- bearerAuth: []
+tags:
+- name: Ingestor
+paths:
+  /v1/ingestor/bootstrap:
+    get:
+      parameters:
+      - schema:
+          type: string
+          format: uuid
+        in: query
+        name: customerId
+        required: true
+      - schema:
+          type: string
+          minLength: 1
+        in: query
+        name: siteExternalId
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Ingestor
+  /v1/ingestor/captures:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                siteId:
+                  type: string
+                  format: uuid
+                cameraId:
+                  type: string
+                  format: uuid
+                frameRequestId:
+                  type: string
+                  minLength: 1
+                customerScanId:
+                  type: string
+                  minLength: 1
+                scanTimestampUtc:
+                  type: string
+                captureTimestampUtc:
+                  type: string
+                mimeType:
+                  type: string
+                  minLength: 1
+                handlingUnitId:
+                  type: string
+                  minLength: 1
+                shipmentId:
+                  type: string
+                  minLength: 1
+                scanMetadata:
+                  type: object
+                  additionalProperties: {}
+                ingestorMetadata:
+                  type: object
+                  properties:
+                    cameraType:
+                      type: string
+                      minLength: 1
+                    timeOffsetMs:
+                      type: integer
+                    toleranceSeconds:
+                      type: number
+                    captureLatencyMs:
+                      type: integer
+                    targetTimestampUtc:
+                      type: string
+                    captureTimestampSource:
+                      type: string
+                      minLength: 1
+                    rawBlobPath:
+                      type: string
+                      minLength: 1
+                  required:
+                  - cameraType
+              required:
+              - siteId
+              - cameraId
+              - frameRequestId
+              - customerScanId
+              - scanTimestampUtc
+              - captureTimestampUtc
+              - mimeType
+              - handlingUnitId
+              - scanMetadata
+              - ingestorMetadata
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Ingestor
+  /v1/ingestor/captures/{id}/upload-complete:
+    patch:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                sizeBytes:
+                  type: integer
+                checksumSha256:
+                  type: string
+                  minLength: 1
+                width:
+                  type: integer
+                height:
+                  type: integer
+      parameters:
+      - schema:
+          type: string
+          format: uuid
+        in: path
+        name: id
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Ingestor
+  /v1/ingestor/scans:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                siteId:
+                  type: string
+                  format: uuid
+                customerScanId:
+                  type: string
+                  minLength: 1
+                scanTimestampUtc:
+                  type: string
+                handlingUnitId:
+                  type: string
+                  minLength: 1
+                shipmentId:
+                  type: string
+                  minLength: 1
+                scanMetadata:
+                  type: object
+                  additionalProperties: {}
+                captures:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      cameraId:
+                        type: string
+                        format: uuid
+                      frameRequestId:
+                        type: string
+                        minLength: 1
+                      captureTimestampUtc:
+                        type: string
+                      mimeType:
+                        type: string
+                        minLength: 1
+                      ingestorMetadata:
+                        type: object
+                        properties:
+                          cameraType:
+                            type: string
+                            minLength: 1
+                          timeOffsetMs:
+                            type: integer
+                          toleranceSeconds:
+                            type: number
+                          captureLatencyMs:
+                            type: integer
+                          targetTimestampUtc:
+                            type: string
+                          captureTimestampSource:
+                            type: string
+                            minLength: 1
+                          rawBlobPath:
+                            type: string
+                            minLength: 1
+                        required:
+                        - cameraType
+                    required:
+                    - cameraId
+                    - frameRequestId
+                    - captureTimestampUtc
+                    - mimeType
+                    - ingestorMetadata
+              required:
+              - siteId
+              - customerScanId
+              - scanTimestampUtc
+              - handlingUnitId
+              - scanMetadata
+              - captures
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Ingestor
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

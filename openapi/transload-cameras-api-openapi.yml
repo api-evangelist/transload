@@ -1,0 +1,412 @@
+openapi: 3.0.3
+info:
+  title: Pipeline Backend Admin Cameras API
+  version: 0.1.0
+security:
+- bearerAuth: []
+tags:
+- name: Cameras
+paths:
+  /v1/cameras:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                customerId:
+                  type: string
+                  format: uuid
+                siteId:
+                  type: string
+                  format: uuid
+                externalId:
+                  type: string
+                  minLength: 1
+                name:
+                  type: string
+                  minLength: 1
+                cameraType:
+                  type: string
+                  enum:
+                  - rtsp
+                  - http_snapshot
+                  - other
+                vendor:
+                  type: string
+                model:
+                  type: string
+                zones:
+                  type: array
+                  items:
+                    type: string
+                    minLength: 1
+                metadata:
+                  type: object
+                  additionalProperties: {}
+                intrinsics:
+                  type: object
+                  properties:
+                    fx:
+                      type: number
+                    fy:
+                      type: number
+                    cx:
+                      type: number
+                    cy:
+                      type: number
+                    k1:
+                      type: number
+                      default: 0
+                    k2:
+                      type: number
+                      default: 0
+                    p1:
+                      type: number
+                      default: 0
+                    p2:
+                      type: number
+                      default: 0
+                    k3:
+                      type: number
+                      default: 0
+                    imageWidth:
+                      type: integer
+                    imageHeight:
+                      type: integer
+                  required:
+                  - fx
+                  - fy
+                  - cx
+                  - cy
+                  - imageWidth
+                  - imageHeight
+                  nullable: true
+                intrinsicsUndistorted:
+                  type: object
+                  properties:
+                    fx:
+                      type: number
+                    fy:
+                      type: number
+                    cx:
+                      type: number
+                    cy:
+                      type: number
+                    width:
+                      type: integer
+                    height:
+                      type: integer
+                  required:
+                  - fx
+                  - fy
+                  - cx
+                  - cy
+                  - width
+                  - height
+                  nullable: true
+                extrinsics:
+                  type: object
+                  properties:
+                    rvec: {}
+                    tvec: {}
+                  required:
+                  - rvec
+                  - tvec
+                  nullable: true
+                measurementConfig:
+                  type: object
+                  additionalProperties:
+                    type: object
+                    additionalProperties: {}
+                  nullable: true
+                config:
+                  type: object
+                  properties:
+                    url:
+                      type: string
+                      minLength: 1
+                    username:
+                      type: string
+                      nullable: true
+                    password:
+                      type: string
+                      nullable: true
+                    bufferSeconds:
+                      type: number
+                      nullable: true
+                    httpPollIntervalSeconds:
+                      type: number
+                      nullable: true
+                    networkOffsetMs:
+                      oneOf:
+                      - type: integer
+                      - enum:
+                        - auto
+                      nullable: true
+                    zones:
+                      type: array
+                      items:
+                        type: string
+                        minLength: 1
+                      nullable: true
+                    rtspTimestampSource:
+                      type: string
+                      enum:
+                      - wall_clock
+                      - rtcp_ntp
+                      - camera_metadata
+                      nullable: true
+                    encodingOffsetMs:
+                      type: integer
+                      nullable: true
+                    cameraMetadataUrl:
+                      type: string
+                      nullable: true
+                    onvifDeviceServiceUrl:
+                      type: string
+                      nullable: true
+                    scanArea:
+                      type: object
+                      additionalProperties: {}
+                      nullable: true
+                  required:
+                  - url
+              required:
+              - customerId
+              - siteId
+              - name
+              - cameraType
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Cameras
+    get:
+      parameters:
+      - schema:
+          type: string
+          format: uuid
+        in: query
+        name: customerId
+        required: false
+      - schema:
+          type: string
+          format: uuid
+        in: query
+        name: siteId
+        required: false
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Cameras
+  /v1/cameras/{cameraId}:
+    get:
+      parameters:
+      - schema:
+          type: string
+          format: uuid
+        in: path
+        name: cameraId
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Cameras
+    patch:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  minLength: 1
+                cameraType:
+                  type: string
+                  enum:
+                  - rtsp
+                  - http_snapshot
+                  - other
+                status:
+                  type: string
+                  enum:
+                  - active
+                  - inactive
+                  - retired
+                vendor:
+                  type: string
+                model:
+                  type: string
+                zones:
+                  type: array
+                  items:
+                    type: string
+                    minLength: 1
+                  nullable: true
+                metadata:
+                  type: object
+                  additionalProperties: {}
+                intrinsics:
+                  type: object
+                  properties:
+                    fx:
+                      type: number
+                    fy:
+                      type: number
+                    cx:
+                      type: number
+                    cy:
+                      type: number
+                    k1:
+                      type: number
+                      default: 0
+                    k2:
+                      type: number
+                      default: 0
+                    p1:
+                      type: number
+                      default: 0
+                    p2:
+                      type: number
+                      default: 0
+                    k3:
+                      type: number
+                      default: 0
+                    imageWidth:
+                      type: integer
+                    imageHeight:
+                      type: integer
+                  required:
+                  - fx
+                  - fy
+                  - cx
+                  - cy
+                  - imageWidth
+                  - imageHeight
+                  nullable: true
+                intrinsicsUndistorted:
+                  type: object
+                  properties:
+                    fx:
+                      type: number
+                    fy:
+                      type: number
+                    cx:
+                      type: number
+                    cy:
+                      type: number
+                    width:
+                      type: integer
+                    height:
+                      type: integer
+                  required:
+                  - fx
+                  - fy
+                  - cx
+                  - cy
+                  - width
+                  - height
+                  nullable: true
+                extrinsics:
+                  type: object
+                  properties:
+                    rvec: {}
+                    tvec: {}
+                  required:
+                  - rvec
+                  - tvec
+                  nullable: true
+                measurementConfig:
+                  type: object
+                  additionalProperties:
+                    type: object
+                    additionalProperties: {}
+                  nullable: true
+                config:
+                  type: object
+                  properties:
+                    url:
+                      type: string
+                      minLength: 1
+                    username:
+                      type: string
+                      nullable: true
+                    password:
+                      type: string
+                      nullable: true
+                    bufferSeconds:
+                      type: number
+                      nullable: true
+                    httpPollIntervalSeconds:
+                      type: number
+                      nullable: true
+                    networkOffsetMs:
+                      oneOf:
+                      - type: integer
+                      - enum:
+                        - auto
+                      nullable: true
+                    zones:
+                      type: array
+                      items:
+                        type: string
+                        minLength: 1
+                      nullable: true
+                    rtspTimestampSource:
+                      type: string
+                      enum:
+                      - wall_clock
+                      - rtcp_ntp
+                      - camera_metadata
+                      nullable: true
+                    encodingOffsetMs:
+                      type: integer
+                      nullable: true
+                    cameraMetadataUrl:
+                      type: string
+                      nullable: true
+                    onvifDeviceServiceUrl:
+                      type: string
+                      nullable: true
+                    scanArea:
+                      type: object
+                      additionalProperties: {}
+                      nullable: true
+                  nullable: true
+      parameters:
+      - schema:
+          type: string
+          format: uuid
+        in: path
+        name: cameraId
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Cameras
+    delete:
+      parameters:
+      - schema:
+          type: string
+          format: uuid
+        in: path
+        name: cameraId
+        required: true
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Cameras
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

@@ -1,0 +1,21 @@
+openapi: 3.0.3
+info:
+  title: Pipeline Backend Admin Readyz API
+  version: 0.1.0
+security:
+- bearerAuth: []
+tags:
+- name: Readyz
+paths:
+  /readyz:
+    get:
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Readyz
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

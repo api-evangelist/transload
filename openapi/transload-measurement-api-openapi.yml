@@ -1,0 +1,96 @@
+openapi: 3.0.3
+info:
+  title: Pipeline Backend Admin Measurement API
+  version: 0.1.0
+security:
+- bearerAuth: []
+tags:
+- name: Measurement
+paths:
+  /v1/measurement/results:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                run_id:
+                  type: string
+                  minLength: 1
+                status:
+                  type: string
+                  enum:
+                  - success
+                  - error
+                measurements:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      image_name:
+                        type: string
+                      camera:
+                        type: string
+                      length_cm:
+                        type: number
+                      width_cm:
+                        type: number
+                      height_cm:
+                        type: number
+                    required:
+                    - image_name
+                    - camera
+                    - length_cm
+                    - width_cm
+                    - height_cm
+                  default: []
+                expected_scans:
+                  type: integer
+                  nullable: true
+                  default: 0
+                output_uris:
+                  type: object
+                  properties:
+                    measurements_csv:
+                      type: string
+                      nullable: true
+                    ply_files:
+                      type: array
+                      items:
+                        type: string
+                    ply_downsampled_files:
+                      type: array
+                      items:
+                        type: string
+                    obb_projection_json_files:
+                      type: array
+                      items:
+                        type: string
+                error:
+                  type: string
+                  nullable: true
+                error_type:
+                  type: string
+                  enum:
+                  - inference_oom
+                  - inference_failed
+                  - mask_missing
+                  - image_download_failed
+                  - config_invalid
+                  - upload_failed
+                  nullable: true
+              required:
+              - run_id
+              - status
+      responses:
+        '200':
+          description: Default Response
+      tags:
+      - Measurement
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
