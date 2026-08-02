@@ -1,0 +1,30 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/transload-pipeline-backend-openapi.json + live probes of https://api.transload.io (2026-07-21)
+format: custom-envelope
+notes: >-
+  The Pipeline Backend OpenAPI documents only 200 "Default Response" entries
+  (no 4xx/5xx responses are declared in the spec), so this catalog is derived
+  from the error envelope observed live on the production host. It is not
+  RFC 9457 application/problem+json.
+envelope:
+  content_type: application/json
+  fields:
+    - name: code
+      type: string
+      description: Machine-readable error code (e.g. unauthorized)
+    - name: message
+      type: string
+      description: Human-readable error message
+    - name: details
+      type: object
+      description: Additional error detail (nullable)
+    - name: requestId
+      type: string
+      description: Per-request trace id (e.g. req-2ya), usable for support correlation
+problem_types:
+  - code: unauthorized
+    status: 401
+    title: Unauthorized
+    detail: Returned by every probed endpoint (including /, /v1, /openapi.json, /health) when no bearer token is presented.
+    evidence: 'observed 2026-07-21: {"code":"unauthorized","message":"Unauthorized","details":null,"requestId":"req-2ya"}'

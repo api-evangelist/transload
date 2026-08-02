@@ -1,7 +1,30 @@
 aid: transload
 name: Transload
-description: Transload is a company surfaced as a portfolio company of y-combinator and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Transload (YC Spring 2026) measures freight with security cameras, turning
+  the CCTV already installed in logistics warehouses into a 3D dimensioner for
+  the loading dock. Its computer vision captures the true size of every pallet,
+  couch, or tire as it moves through the warehouse — no new hardware or process
+  changes — recovering rebilling revenue and trailer utilization for trucking
+  companies (the company reports ~15% of shipments measure larger than
+  declared). Founded 2026 in San Francisco by Nils Börner, Julius Scheel, and
+  Jago Wahl-Schwentker (TU Munich). Its bearer-authenticated Pipeline Backend
+  API is publicly described by an OpenAPI 3.0.3 served at
+  api.transload.io/docs, covering customers, sites, cameras, scans, processing
+  stages, AI measurement results, and customer handling-unit data.
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://bookface-images.s3.amazonaws.com/small_logos/1bddf9622d95fa25a8b10500158d81f74f5df2f7.png
 url: https://raw.githubusercontent.com/api-evangelist/transload/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,12 +34,365 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
-apis: []
+- Logistics
+- Freight
+- Computer Vision
+- Warehouses
+- Supply Chain
+- Measurement
+- Cameras
+- Trucking
+apis:
+- aid: transload:transload-admin-api
+  name: Transload Admin API
+  description: The Admin API from Transload — 36 operation(s) for admin.
+  humanURL: https://api.transload.io/docs
+  baseURL: https://api.transload.io
+  tags:
+  - Admin
+  properties:
+  - type: OpenAPI
+    url: openapi/transload-admin-api-openapi.yml
+  - type: Documentation
+    url: https://api.transload.io/docs
+  - type: APIReference
+    url: https://api.transload.io/docs
+- aid: transload:transload-ai-results-api
+  name: Transload Ai Results API
+  description: The Ai Results API from Transload — 3 operation(s) for ai results.
+  humanURL: https://api.transload.io/docs
+  baseURL: https://api.transload.io
+  tags:
+  - Ai Results
+  properties:
+  - type: OpenAPI
+    url: openapi/transload-ai-results-api-openapi.yml
+  - type: Documentation
+    url: https://api.transload.io/docs
+  - type: APIReference
+    url: https://api.transload.io/docs
+- aid: transload:transload-artifacts-api
+  name: Transload Artifacts API
+  description: The Artifacts API from Transload — 1 operation(s) for artifacts.
+  humanURL: https://api.transload.io/docs
+  baseURL: https://api.transload.io
+  tags:
+  - Artifacts
+  properties:
+  - type: OpenAPI
+    url: openapi/transload-artifacts-api-openapi.yml
+  - type: Documentation
+    url: https://api.transload.io/docs
+  - type: APIReference
+    url: https://api.transload.io/docs
+- aid: transload:transload-cameras-api
+  name: Transload Cameras API
+  description: The Cameras API from Transload — 2 operation(s) for cameras.
+  humanURL: https://api.transload.io/docs
+  baseURL: https://api.transload.io
+  tags:
+  - Cameras
+  properties:
+  - type: OpenAPI
+    url: openapi/transload-cameras-api-openapi.yml
+  - type: Documentation
+    url: https://api.transload.io/docs
+  - type: APIReference
+    url: https://api.transload.io/docs
+- aid: transload:transload-customer-api
+  name: Transload Customer API
+  description: The Customer API from Transload — 9 operation(s) for customer.
+  humanURL: https://api.transload.io/docs
+  baseURL: https://api.transload.io
+  tags:
+  - Customer
+  properties:
+  - type: OpenAPI
+    url: openapi/transload-customer-api-openapi.yml
+  - type: Documentation
+    url: https://api.transload.io/docs
+  - type: APIReference
+    url: https://api.transload.io/docs
+- aid: transload:transload-customers-api
+  name: Transload Customers API
+  description: The Customers API from Transload — 2 operation(s) for customers.
+  humanURL: https://api.transload.io/docs
+  baseURL: https://api.transload.io
+  tags:
+  - Customers
+  properties:
+  - type: OpenAPI
+    url: openapi/transload-customers-api-openapi.yml
+  - type: Documentation
+    url: https://api.transload.io/docs
+  - type: APIReference
+    url: https://api.transload.io/docs
+- aid: transload:transload-exports-api
+  name: Transload Exports API
+  description: The Exports API from Transload — 1 operation(s) for exports.
+  humanURL: https://api.transload.io/docs
+  baseURL: https://api.transload.io
+  tags:
+  - Exports
+  properties:
+  - type: OpenAPI
+    url: openapi/transload-exports-api-openapi.yml
+  - type: Documentation
+    url: https://api.transload.io/docs
+  - type: APIReference
+    url: https://api.transload.io/docs
+- aid: transload:transload-handling-units-api
+  name: Transload Handling Units API
+  description: The Handling Units API from Transload — 1 operation(s) for handling units.
+  humanURL: https://api.transload.io/docs
+  baseURL: https://api.transload.io
+  tags:
+  - Handling Units
+  properties:
+  - type: OpenAPI
+    url: openapi/transload-handling-units-api-openapi.yml
+  - type: Documentation
+    url: https://api.transload.io/docs
+  - type: APIReference
+    url: https://api.transload.io/docs
+- aid: transload:transload-healthz-api
+  name: Transload Healthz API
+  description: The Healthz API from Transload — 1 operation(s) for healthz.
+  humanURL: https://api.transload.io/docs
+  baseURL: https://api.transload.io
+  tags:
+  - Healthz
+  properties:
+  - type: OpenAPI
+    url: openapi/transload-healthz-api-openapi.yml
+  - type: Documentation
+    url: https://api.transload.io/docs
+  - type: APIReference
+    url: https://api.transload.io/docs
+- aid: transload:transload-ingestor-api
+  name: Transload Ingestor API
+  description: The Ingestor API from Transload — 4 operation(s) for ingestor.
+  humanURL: https://api.transload.io/docs
+  baseURL: https://api.transload.io
+  tags:
+  - Ingestor
+  properties:
+  - type: OpenAPI
+    url: openapi/transload-ingestor-api-openapi.yml
+  - type: Documentation
+    url: https://api.transload.io/docs
+  - type: APIReference
+    url: https://api.transload.io/docs
+- aid: transload:transload-internal-api
+  name: Transload Internal API
+  description: The Internal API from Transload — 16 operation(s) for internal.
+  humanURL: https://api.transload.io/docs
+  baseURL: https://api.transload.io
+  tags:
+  - Internal
+  properties:
+  - type: OpenAPI
+    url: openapi/transload-internal-api-openapi.yml
+  - type: Documentation
+    url: https://api.transload.io/docs
+  - type: APIReference
+    url: https://api.transload.io/docs
+- aid: transload:transload-measurement-api
+  name: Transload Measurement API
+  description: The Measurement API from Transload — 1 operation(s) for measurement.
+  humanURL: https://api.transload.io/docs
+  baseURL: https://api.transload.io
+  tags:
+  - Measurement
+  properties:
+  - type: OpenAPI
+    url: openapi/transload-measurement-api-openapi.yml
+  - type: Documentation
+    url: https://api.transload.io/docs
+  - type: APIReference
+    url: https://api.transload.io/docs
+- aid: transload:transload-media-assets-api
+  name: Transload Media Assets API
+  description: The Media Assets API from Transload — 2 operation(s) for media assets.
+  humanURL: https://api.transload.io/docs
+  baseURL: https://api.transload.io
+  tags:
+  - Media Assets
+  properties:
+  - type: OpenAPI
+    url: openapi/transload-media-assets-api-openapi.yml
+  - type: Documentation
+    url: https://api.transload.io/docs
+  - type: APIReference
+    url: https://api.transload.io/docs
+- aid: transload:transload-processing-jobs-api
+  name: Transload Processing Jobs API
+  description: The Processing Jobs API from Transload — 2 operation(s) for processing jobs.
+  humanURL: https://api.transload.io/docs
+  baseURL: https://api.transload.io
+  tags:
+  - Processing Jobs
+  properties:
+  - type: OpenAPI
+    url: openapi/transload-processing-jobs-api-openapi.yml
+  - type: Documentation
+    url: https://api.transload.io/docs
+  - type: APIReference
+    url: https://api.transload.io/docs
+- aid: transload:transload-qa-api
+  name: Transload Qa API
+  description: The Qa API from Transload — 18 operation(s) for qa.
+  humanURL: https://api.transload.io/docs
+  baseURL: https://api.transload.io
+  tags:
+  - Qa
+  properties:
+  - type: OpenAPI
+    url: openapi/transload-qa-api-openapi.yml
+  - type: Documentation
+    url: https://api.transload.io/docs
+  - type: APIReference
+    url: https://api.transload.io/docs
+- aid: transload:transload-qa-classification-api
+  name: Transload Qa Classification API
+  description: The Qa Classification API from Transload — 6 operation(s) for qa classification.
+  humanURL: https://api.transload.io/docs
+  baseURL: https://api.transload.io
+  tags:
+  - Qa Classification
+  properties:
+  - type: OpenAPI
+    url: openapi/transload-qa-classification-api-openapi.yml
+  - type: Documentation
+    url: https://api.transload.io/docs
+  - type: APIReference
+    url: https://api.transload.io/docs
+- aid: transload:transload-qa-measurement-api
+  name: Transload Qa Measurement API
+  description: The Qa Measurement API from Transload — 9 operation(s) for qa measurement.
+  humanURL: https://api.transload.io/docs
+  baseURL: https://api.transload.io
+  tags:
+  - Qa Measurement
+  properties:
+  - type: OpenAPI
+    url: openapi/transload-qa-measurement-api-openapi.yml
+  - type: Documentation
+    url: https://api.transload.io/docs
+  - type: APIReference
+    url: https://api.transload.io/docs
+- aid: transload:transload-readyz-api
+  name: Transload Readyz API
+  description: The Readyz API from Transload — 1 operation(s) for readyz.
+  humanURL: https://api.transload.io/docs
+  baseURL: https://api.transload.io
+  tags:
+  - Readyz
+  properties:
+  - type: OpenAPI
+    url: openapi/transload-readyz-api-openapi.yml
+  - type: Documentation
+    url: https://api.transload.io/docs
+  - type: APIReference
+    url: https://api.transload.io/docs
+- aid: transload:transload-reference-measurements-api
+  name: Transload Reference Measurements API
+  description: >-
+    The Reference Measurements API from Transload — 2 operation(s) for reference measurements.
+  humanURL: https://api.transload.io/docs
+  baseURL: https://api.transload.io
+  tags:
+  - Reference Measurements
+  properties:
+  - type: OpenAPI
+    url: openapi/transload-reference-measurements-api-openapi.yml
+  - type: Documentation
+    url: https://api.transload.io/docs
+  - type: APIReference
+    url: https://api.transload.io/docs
+- aid: transload:transload-refresh-token-api
+  name: Transload Refresh Token API
+  description: The Refresh Token API from Transload — 1 operation(s) for refresh token.
+  humanURL: https://api.transload.io/docs
+  baseURL: https://api.transload.io
+  tags:
+  - Refresh Token
+  properties:
+  - type: OpenAPI
+    url: openapi/transload-refresh-token-api-openapi.yml
+  - type: Documentation
+    url: https://api.transload.io/docs
+  - type: APIReference
+    url: https://api.transload.io/docs
+- aid: transload:transload-scans-api
+  name: Transload Scans API
+  description: The Scans API from Transload — 5 operation(s) for scans.
+  humanURL: https://api.transload.io/docs
+  baseURL: https://api.transload.io
+  tags:
+  - Scans
+  properties:
+  - type: OpenAPI
+    url: openapi/transload-scans-api-openapi.yml
+  - type: Documentation
+    url: https://api.transload.io/docs
+  - type: APIReference
+    url: https://api.transload.io/docs
+- aid: transload:transload-sites-api
+  name: Transload Sites API
+  description: The Sites API from Transload — 2 operation(s) for sites.
+  humanURL: https://api.transload.io/docs
+  baseURL: https://api.transload.io
+  tags:
+  - Sites
+  properties:
+  - type: OpenAPI
+    url: openapi/transload-sites-api-openapi.yml
+  - type: Documentation
+    url: https://api.transload.io/docs
+  - type: APIReference
+    url: https://api.transload.io/docs
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+common:
+- type: DomainSecurity
+  url: security/transload-domain-security.yml
+- type: Authentication
+  url: authentication/transload-authentication.yml
+- type: Website
+  url: https://transload.io
+- type: PrivacyPolicy
+  url: https://transload.io/privacy-policy/
+- type: Compliance
+  url: https://transload.io/gdpr/
+- type: Support
+  url: mailto:contact@transload.io
+- type: Documentation
+  url: https://api.transload.io/docs
+- type: APIReference
+  url: https://api.transload.io/docs
+- type: MCPServer
+  url: mcp/transload-mcp.yml
+- type: LLMsTxt
+  url: llms/transload-llms.txt
+- type: ErrorCatalog
+  url: errors/transload-problem-types.yml
+- type: Conventions
+  url: conventions/transload-conventions.yml
+- type: Conformance
+  url: conformance/transload-conformance.yml
+- type: DataModel
+  url: data-model/transload-data-model.yml
+- type: AgentSkill
+  url: skills/_index.yml
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 11
+  pass: local-v1

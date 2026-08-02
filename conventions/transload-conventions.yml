@@ -1,0 +1,51 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/transload-pipeline-backend-openapi.json + live probes of https://api.transload.io (2026-07-21)
+notes: >-
+  Transload publishes no developer documentation; these conventions are derived
+  from the publicly served Pipeline Backend OpenAPI (3.0.3) and observed live
+  behavior of the production host.
+authentication:
+  style: http-bearer
+  scheme: bearerAuth (type http, scheme bearer), applied globally via security[]
+  flows_in_spec:
+    - customer magic-link auth (POST /v1/customer/auth/request-link, POST /v1/customer/auth/verify, GET /v1/customer/auth/session, POST /v1/customer/auth/select-customer, POST /v1/customer/auth/logout)
+    - POST /refresh-token (token refresh, token minLength 10 + optional otp)
+    - POST /admin/login (admin surface)
+  see: authentication/transload-authentication.yml
+idempotency:
+  supported: false
+  evidence: No Idempotency-Key header or idempotency parameter anywhere in the 145 operations; no docs to state otherwise.
+pagination:
+  style: limit-offset
+  params:
+    - name: limit
+      type: integer
+      default: 50
+      minimum: 1
+    - name: offset
+      type: integer
+      default: 0
+  variants: cursor parameter appears on some endpoints; time-window filtering via capturedAfter/capturedBefore, from/to, since (date-time)
+versioning:
+  style: uri-path
+  evidence: Primary surface under /v1/...; info.version 0.1.0 ("Pipeline Backend"); no deprecation or sunset headers documented.
+request_tracing:
+  response_field: requestId
+  evidence: Every observed error response carries a requestId (e.g. req-2ya).
+error_envelope:
+  content_type: application/json
+  shape: '{code, message, details, requestId}'
+  see: errors/transload-problem-types.yml
+rate_limiting:
+  documented: false
+  evidence: No 429 responses or rate-limit headers documented in the spec; no public rate-limit docs.
+field_expansion:
+  supported: false
+  evidence: No expand/fields/include parameters in the spec.
+metadata:
+  supported: true
+  evidence: customers, sites, cameras, and scans accept a free-form metadata object (additionalProperties) on create.
+signed_urls:
+  supported: true
+  evidence: sig + expires query parameters on artifact retrieval endpoints (e.g. GET /v1/artifacts/local/{resultId}/{artifactKind}); POST /v1/ai-results/{resultId}/artifacts/{artifactKind}/url mints artifact URLs.

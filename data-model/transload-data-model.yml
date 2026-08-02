@@ -1,0 +1,79 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/transload-pipeline-backend-openapi.json
+notes: >-
+  Derived from resource paths, request-body fields, and id-reference query
+  parameters in the publicly served Pipeline Backend OpenAPI. The spec keeps
+  components.schemas empty (all schemas inline), so entities map to the /v1
+  resource collections.
+entities:
+  - name: Customer
+    id_format: uuid
+    fields_evidence: slug, name, storageProvider (azure_blob|gcs|localfs), storageAccount, storageContainer, logoUrl, metadata
+  - name: Site
+    id_format: uuid
+    fields_evidence: customerId, slug, name, address, timezone, metadata, scanSource (db|scandrop), customerDatabase
+  - name: Camera
+    id_format: uuid
+    fields_evidence: customerId, siteId, externalId, name, cameraType (rtsp|http_snapshot|other), vendor, model, zones, intrinsics (fx/fy/cx/cy), metadata
+  - name: MediaAsset
+    id_format: uuid
+  - name: Scan
+    id_format: uuid
+    fields_evidence: customerId, siteId, capturedAt, handlingUnitId, shipmentId, identifiers[] (customer_scan_id|handling_unit_id|shipment_id|frame_request_id), metadata; stages ingestion|dewarping|classification|measurement|qa with status pending|running|succeeded|failed|skipped|rejected
+  - name: ProcessingJob
+    id_format: uuid
+  - name: AIResult
+    id_format: uuid
+    fields_evidence: artifacts by artifactKind, retrieved per scan or per handling unit
+  - name: ReferenceMeasurement
+    id_format: uuid
+  - name: HandlingUnit
+    id_format: string (external identifier)
+  - name: Shipment
+    id_format: string (external identifier)
+relationships:
+  - subject: Site
+    relation: belongs_to
+    object: Customer
+    via: customerId
+  - subject: Camera
+    relation: belongs_to
+    object: Customer
+    via: customerId
+  - subject: Camera
+    relation: belongs_to
+    object: Site
+    via: siteId
+  - subject: Scan
+    relation: belongs_to
+    object: Customer
+    via: customerId
+  - subject: Scan
+    relation: belongs_to
+    object: Site
+    via: siteId
+  - subject: Scan
+    relation: belongs_to
+    object: HandlingUnit
+    via: handlingUnitId
+  - subject: Scan
+    relation: belongs_to
+    object: Shipment
+    via: shipmentId
+  - subject: AIResult
+    relation: belongs_to
+    object: Scan
+    via: scanId
+  - subject: HandlingUnit
+    relation: has_one
+    object: AIResult
+    via: GET /v1/handling-units/{handlingUnit}/latest-result
+  - subject: Customer
+    relation: has_many
+    object: HandlingUnit
+    via: GET /v1/customer/data/handling-units
+  - subject: Customer
+    relation: has_many
+    object: Shipment
+    via: GET /v1/customer/data/shipments/{shipmentId}

@@ -1,0 +1,12 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/transload-pipeline-backend-openapi.json
+summary:
+  types:
+  - http
+schemes:
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  sources:
+  - openapi/transload-pipeline-backend-openapi.json

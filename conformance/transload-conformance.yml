@@ -1,0 +1,25 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/transload-pipeline-backend-openapi.json + transload.io site probes (2026-07-21)
+standards:
+  - id: oauth2
+    conforms: false
+    evidence: securitySchemes declares only http bearer (bearerAuth); no oauth2 flows, no /.well-known/oauth-authorization-server (404).
+  - id: oidc
+    conforms: false
+    evidence: /.well-known/openid-configuration returns 404 on www.transload.io; no openIdConnect securityScheme in the spec.
+  - id: rfc9457
+    conforms: false
+    evidence: Errors use a custom application/json envelope {code, message, details, requestId}, not application/problem+json (see errors/transload-problem-types.yml).
+  - id: pagination
+    conforms: true
+    evidence: Consistent limit (default 50) / offset (default 0) query parameters across list operations; cursor on some endpoints.
+  - id: uri-versioning
+    conforms: true
+    evidence: Primary API surface is namespaced under /v1/.
+  - id: idempotency
+    conforms: false
+    evidence: No Idempotency-Key support anywhere in the spec.
+  - id: gdpr
+    conforms: true
+    evidence: Published GDPR Technical and Organizational Measures page at https://transload.io/gdpr/ and privacy policy at https://transload.io/privacy-policy/.

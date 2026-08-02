@@ -1,0 +1,31 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for the Transload Pipeline Backend API
+  version: 1.0.0
+x-provenance:
+  generated: '2026-07-21'
+  method: generated
+  source: openapi/transload-pipeline-backend-openapi.json
+extends: openapi/transload-pipeline-backend-openapi.json
+actions:
+  - target: $.info
+    update:
+      description: >-
+        Transload's Pipeline Backend API powers its computer-vision freight
+        measurement platform, which turns pre-installed warehouse security
+        cameras (CCTV) into a 3D dimensioner for the loading dock. The API
+        manages customers, sites, cameras, media assets, scans, processing
+        jobs (ingestion, dewarping, classification, measurement, QA stages),
+        AI measurement results, reference measurements, and customer-facing
+        handling-unit and shipment data. The spec is served publicly at
+        https://api.transload.io/docs (Swagger UI) and
+        https://api.transload.io/docs/json; all operations require bearer
+        authentication.
+      contact:
+        email: contact@transload.io
+        url: https://transload.io
+  - target: $
+    update:
+      servers:
+        - url: https://api.transload.io
+          description: Production (observed live host serving this spec; all operations return the JSON error envelope with 401 unauthorized without a bearer token)

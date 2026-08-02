@@ -1,0 +1,7 @@
+generated: '2026-07-21'
+method: generated
+source: openapi/transload-pipeline-backend-openapi.json
+skills:
+  - file: transload-retrieve-freight-measurements.md
+    name: transload-retrieve-freight-measurements
+    description: Retrieve computer-vision freight measurement results — list scans, follow pipeline stages, and pull the latest AI measurement for a handling unit.
