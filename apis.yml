@@ -361,6 +361,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Overlay
+  url: overlays/transload-pipeline-backend-overlay.yaml
 - type: DomainSecurity
   url: security/transload-domain-security.yml
 - type: Authentication
