@@ -1,0 +1,34 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Pipeline Backend Admin Healthz API",
+    "version": "0.1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Healthz",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /healthz",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/healthz"
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

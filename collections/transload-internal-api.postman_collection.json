@@ -1,0 +1,1458 @@
+{
+  "item": [
+    {
+      "id": "ba2b7dd8-1ecb-4c68-b93f-d7857a31853a",
+      "name": "Internal",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "cc60ecc3-aaf8-49dc-84d4-8172237c459a",
+          "name": "/internal/jobs/:jobId/run",
+          "request": {
+            "name": "/internal/jobs/:jobId/run",
+            "description": {},
+            "url": {
+              "path": [
+                "internal",
+                "jobs",
+                ":jobId",
+                "run"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "jobId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "83f39c05-a38a-4171-9ac5-d39a5128998f",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "internal",
+                    "jobs",
+                    ":jobId",
+                    "run"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "jobId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "63156f14-4d63-4727-966d-fcae0280ae33",
+          "name": "/v1/internal/koch-pending-measurement-qa-handling-units",
+          "request": {
+            "name": "/v1/internal/koch-pending-measurement-qa-handling-units",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "internal",
+                "koch-pending-measurement-qa-handling-units"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "1000"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "948faf51-3d14-4f1d-9d1a-4f6fd7ec1f21",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "internal",
+                    "koch-pending-measurement-qa-handling-units"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "1000"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "34e4731b-7914-4318-ad16-671a6271cb6a",
+          "name": "/v1/internal/import-reference-measurements",
+          "request": {
+            "name": "/v1/internal/import-reference-measurements",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "internal",
+                "import-reference-measurements"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customerId\": \"<uuid>\",\n  \"sourceSystem\": \"<string>\",\n  \"measurements\": [\n    {\n      \"matchedBy\": \"<string>\",\n      \"matchedValue\": \"<string>\",\n      \"lengthCm\": \"<integer>\",\n      \"widthCm\": \"<integer>\",\n      \"heightCm\": \"<integer>\",\n      \"sourceRecordId\": \"<string>\"\n    },\n    {\n      \"matchedBy\": \"<string>\",\n      \"matchedValue\": \"<string>\",\n      \"lengthCm\": \"<integer>\",\n      \"widthCm\": \"<integer>\",\n      \"heightCm\": \"<integer>\",\n      \"sourceRecordId\": \"<string>\"\n    }\n  ],\n  \"importBatchId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d956b49d-f787-42ce-afa0-e322907a8c06",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "internal",
+                    "import-reference-measurements"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"customerId\": \"<uuid>\",\n  \"sourceSystem\": \"<string>\",\n  \"measurements\": [\n    {\n      \"matchedBy\": \"<string>\",\n      \"matchedValue\": \"<string>\",\n      \"lengthCm\": \"<integer>\",\n      \"widthCm\": \"<integer>\",\n      \"heightCm\": \"<integer>\",\n      \"sourceRecordId\": \"<string>\"\n    },\n    {\n      \"matchedBy\": \"<string>\",\n      \"matchedValue\": \"<string>\",\n      \"lengthCm\": \"<integer>\",\n      \"widthCm\": \"<integer>\",\n      \"heightCm\": \"<integer>\",\n      \"sourceRecordId\": \"<string>\"\n    }\n  ],\n  \"importBatchId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5d31b449-f592-439e-81bf-f39d89d032a7",
+          "name": "/v1/internal/process-classification",
+          "request": {
+            "name": "/v1/internal/process-classification",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "internal",
+                "process-classification"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "031f1ca7-d3ad-42c7-93ee-ba747f6db94c",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "internal",
+                    "process-classification"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "de7ea58b-c264-4c33-b3b2-c909203a5e0a",
+          "name": "/v1/internal/classification-result",
+          "request": {
+            "name": "/v1/internal/classification-result",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "internal",
+                "classification-result"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"job_id\": \"<string>\",\n  \"status\": \"<string>\",\n  \"result\": {\n    \"scanner_present\": \"<boolean>\",\n    \"confidence\": \"<number>\",\n    \"gap\": \"<number>\",\n    \"is_measurable\": \"<boolean>\",\n    \"best_frame\": \"<string>\",\n    \"review_flags\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"signals\": {\n      \"key_0\": {},\n      \"key_1\": {}\n    },\n    \"segmentation\": {}\n  },\n  \"error\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "46f35206-ada3-46b5-a1b9-dbd432369b5a",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "internal",
+                    "classification-result"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"job_id\": \"<string>\",\n  \"status\": \"<string>\",\n  \"result\": {\n    \"scanner_present\": \"<boolean>\",\n    \"confidence\": \"<number>\",\n    \"gap\": \"<number>\",\n    \"is_measurable\": \"<boolean>\",\n    \"best_frame\": \"<string>\",\n    \"review_flags\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"signals\": {\n      \"key_0\": {}\n    },\n    \"segmentation\": {}\n  },\n  \"error\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2791f093-8daf-499c-b34a-799b4bb32efe",
+          "name": "/v1/internal/classification-recover-polled",
+          "request": {
+            "name": "/v1/internal/classification-recover-polled",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "internal",
+                "classification-recover-polled"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sinceHours\": 48,\n  \"limit\": 500,\n  \"dryRun\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "143f4768-a171-4cbe-8823-3be44d26555d",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "internal",
+                    "classification-recover-polled"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sinceHours\": 48,\n  \"limit\": 500,\n  \"dryRun\": true\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "24dc12a5-619f-4ef1-8ed1-8074da07ac47",
+          "name": "/v1/internal/classification-reset",
+          "request": {
+            "name": "/v1/internal/classification-reset",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "internal",
+                "classification-reset"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customerId\": \"<uuid>\",\n  \"siteId\": \"<uuid>\",\n  \"scanIds\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"since\": \"<dateTime>\",\n  \"reason\": \"manual classification reset\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "331afef8-c7ab-4320-b3cd-98697eb26a6b",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "internal",
+                    "classification-reset"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"customerId\": \"<uuid>\",\n  \"siteId\": \"<uuid>\",\n  \"scanIds\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"since\": \"<dateTime>\",\n  \"reason\": \"manual classification reset\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "54d75acf-bd25-4087-a0e8-36a9f4b84472",
+          "name": "/v1/internal/process-dewarping",
+          "request": {
+            "name": "/v1/internal/process-dewarping",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "internal",
+                "process-dewarping"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "83247061-b7a7-4f3a-9eb4-38564592aa40",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "internal",
+                    "process-dewarping"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "08d23222-d3b3-4196-9c13-1965b860fa67",
+          "name": "/v1/internal/dewarping-reset",
+          "request": {
+            "name": "/v1/internal/dewarping-reset",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "internal",
+                "dewarping-reset"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customerId\": \"<uuid>\",\n  \"siteId\": \"<uuid>\",\n  \"scanIds\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"reason\": \"manual dewarping reset\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2ac6c9d5-75d0-4c9c-a360-3bdfd2728b97",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "internal",
+                    "dewarping-reset"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"customerId\": \"<uuid>\",\n  \"siteId\": \"<uuid>\",\n  \"scanIds\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"reason\": \"manual dewarping reset\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1340beaa-e42f-4d40-a572-43f07d10c62b",
+          "name": "/v1/internal/dewarping-reject-stuck",
+          "request": {
+            "name": "/v1/internal/dewarping-reject-stuck",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "internal",
+                "dewarping-reject-stuck"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"scanIds\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"reason\": \"manual reject-stuck (TECH-163 cleanup)\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a56213c8-7f10-4a8a-9555-19e52431827a",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "internal",
+                    "dewarping-reject-stuck"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"scanIds\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"reason\": \"manual reject-stuck (TECH-163 cleanup)\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f5eacce7-97c4-49af-a719-4089d6113139",
+          "name": "/v1/internal/measurement-ready-scans",
+          "request": {
+            "name": "/v1/internal/measurement-ready-scans",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "internal",
+                "measurement-ready-scans"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "customerId",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "scanIds",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "97c3c42f-f76e-4091-a42f-a8f029b07114",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "internal",
+                    "measurement-ready-scans"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "customerId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "scanIds",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c61bc3ec-2205-48ef-b68e-fee68036ca58",
+          "name": "/v1/internal/measurement-reset",
+          "request": {
+            "name": "/v1/internal/measurement-reset",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "internal",
+                "measurement-reset"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customerId\": \"<uuid>\",\n  \"siteId\": \"<uuid>\",\n  \"scanIds\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"reason\": \"manual reset\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cac9819d-fdf4-44b5-a0ac-08aa279003ab",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "internal",
+                    "measurement-reset"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"customerId\": \"<uuid>\",\n  \"siteId\": \"<uuid>\",\n  \"scanIds\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"reason\": \"manual reset\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "17a52698-d597-4931-930d-ecd76bef8617",
+          "name": "/v1/internal/measurement-results",
+          "request": {
+            "name": "/v1/internal/measurement-results",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "internal",
+                "measurement-results"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"scanId\": \"<uuid>\",\n  \"handlingUnits\": [\n    {\n      \"lengthCm\": \"<number>\",\n      \"widthCm\": \"<number>\",\n      \"heightCm\": \"<number>\",\n      \"handlingUnitId\": \"<string>\",\n      \"artifacts\": {},\n      \"resultPayload\": {}\n    },\n    {\n      \"lengthCm\": \"<number>\",\n      \"widthCm\": \"<number>\",\n      \"heightCm\": \"<number>\",\n      \"handlingUnitId\": \"<string>\",\n      \"artifacts\": {},\n      \"resultPayload\": {}\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "999bf285-dcc4-40d2-a391-d9b9ecbc0e24",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "internal",
+                    "measurement-results"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"scanId\": \"<uuid>\",\n  \"handlingUnits\": [\n    {\n      \"lengthCm\": \"<number>\",\n      \"widthCm\": \"<number>\",\n      \"heightCm\": \"<number>\",\n      \"handlingUnitId\": \"<string>\",\n      \"artifacts\": {},\n      \"resultPayload\": {}\n    },\n    {\n      \"lengthCm\": \"<number>\",\n      \"widthCm\": \"<number>\",\n      \"heightCm\": \"<number>\",\n      \"handlingUnitId\": \"<string>\",\n      \"artifacts\": {},\n      \"resultPayload\": {}\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7d103f01-5781-4b9f-972f-01fb21d98721",
+          "name": "/v1/internal/reviewed-scan-images",
+          "request": {
+            "name": "/v1/internal/reviewed-scan-images",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "internal",
+                "reviewed-scan-images"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "customerId",
+                  "value": "<uuid>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "50"
+                },
+                {
+                  "disabled": false,
+                  "key": "cursor",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c46ec04b-4e09-4879-8f06-2995cfd3b96d",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "internal",
+                    "reviewed-scan-images"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "customerId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    },
+                    {
+                      "key": "cursor",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9115e059-aaa5-4d8f-b877-66585451dd76",
+          "name": "/v1/internal/process-privacy-blur",
+          "request": {
+            "name": "/v1/internal/process-privacy-blur",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "internal",
+                "process-privacy-blur"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"limit\": 25,\n  \"withinDays\": 14\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a2c22b34-5678-433b-bc38-d4affd93130d",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "internal",
+                    "process-privacy-blur"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"limit\": 25,\n  \"withinDays\": 14\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bbac2263-62ff-483d-ba02-ce349057d8a1",
+          "name": "/v1/internal/process-measurement",
+          "request": {
+            "name": "/v1/internal/process-measurement",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "internal",
+                "process-measurement"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3b184efc-2a4b-42c2-94da-8dcd0d60a756",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "internal",
+                    "process-measurement"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "1c08d0d8-b3d4-4e38-b4b5-ec92b57a144a",
+    "name": "Pipeline Backend Admin Internal API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

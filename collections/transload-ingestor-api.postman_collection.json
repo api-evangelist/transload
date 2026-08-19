@@ -1,0 +1,428 @@
+{
+  "item": [
+    {
+      "id": "497b68fa-40dd-4bd2-bbea-387d2b011fbb",
+      "name": "Ingestor",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3fe80e6d-a085-4545-b543-4bc21d821aa6",
+          "name": "/v1/ingestor/bootstrap",
+          "request": {
+            "name": "/v1/ingestor/bootstrap",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "ingestor",
+                "bootstrap"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "customerId",
+                  "value": "<uuid>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "siteExternalId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "042ddd5e-90af-4ab1-a0b3-70e1feb22cdc",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "ingestor",
+                    "bootstrap"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "customerId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "siteExternalId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cbf91894-cc6d-4540-b704-ec55741095d9",
+          "name": "/v1/ingestor/captures",
+          "request": {
+            "name": "/v1/ingestor/captures",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "ingestor",
+                "captures"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"siteId\": \"<uuid>\",\n  \"cameraId\": \"<uuid>\",\n  \"frameRequestId\": \"<string>\",\n  \"customerScanId\": \"<string>\",\n  \"scanTimestampUtc\": \"<string>\",\n  \"captureTimestampUtc\": \"<string>\",\n  \"mimeType\": \"<string>\",\n  \"handlingUnitId\": \"<string>\",\n  \"scanMetadata\": {\n    \"key_0\": {}\n  },\n  \"ingestorMetadata\": {\n    \"cameraType\": \"<string>\",\n    \"timeOffsetMs\": \"<integer>\",\n    \"toleranceSeconds\": \"<number>\",\n    \"captureLatencyMs\": \"<integer>\",\n    \"targetTimestampUtc\": \"<string>\",\n    \"captureTimestampSource\": \"<string>\",\n    \"rawBlobPath\": \"<string>\"\n  },\n  \"shipmentId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7e9deb4f-a7d2-4737-bf7f-63187ee340cd",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "ingestor",
+                    "captures"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"siteId\": \"<uuid>\",\n  \"cameraId\": \"<uuid>\",\n  \"frameRequestId\": \"<string>\",\n  \"customerScanId\": \"<string>\",\n  \"scanTimestampUtc\": \"<string>\",\n  \"captureTimestampUtc\": \"<string>\",\n  \"mimeType\": \"<string>\",\n  \"handlingUnitId\": \"<string>\",\n  \"scanMetadata\": {\n    \"key_0\": {}\n  },\n  \"ingestorMetadata\": {\n    \"cameraType\": \"<string>\",\n    \"timeOffsetMs\": \"<integer>\",\n    \"toleranceSeconds\": \"<number>\",\n    \"captureLatencyMs\": \"<integer>\",\n    \"targetTimestampUtc\": \"<string>\",\n    \"captureTimestampSource\": \"<string>\",\n    \"rawBlobPath\": \"<string>\"\n  },\n  \"shipmentId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d693a55c-9cb9-48d2-8c1a-00e8e7fa29e1",
+          "name": "/v1/ingestor/captures/:id/upload-complete",
+          "request": {
+            "name": "/v1/ingestor/captures/:id/upload-complete",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "ingestor",
+                "captures",
+                ":id",
+                "upload-complete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sizeBytes\": \"<integer>\",\n  \"checksumSha256\": \"<string>\",\n  \"width\": \"<integer>\",\n  \"height\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "68d7e6e8-3751-4ff7-959c-cbc1d2ce5139",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "ingestor",
+                    "captures",
+                    ":id",
+                    "upload-complete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sizeBytes\": \"<integer>\",\n  \"checksumSha256\": \"<string>\",\n  \"width\": \"<integer>\",\n  \"height\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6de574a1-b65f-4ccc-9d8e-b2e54a9c141a",
+          "name": "/v1/ingestor/scans",
+          "request": {
+            "name": "/v1/ingestor/scans",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "ingestor",
+                "scans"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"siteId\": \"<uuid>\",\n  \"customerScanId\": \"<string>\",\n  \"scanTimestampUtc\": \"<string>\",\n  \"handlingUnitId\": \"<string>\",\n  \"scanMetadata\": {\n    \"key_0\": {}\n  },\n  \"captures\": [\n    {\n      \"cameraId\": \"<uuid>\",\n      \"frameRequestId\": \"<string>\",\n      \"captureTimestampUtc\": \"<string>\",\n      \"mimeType\": \"<string>\",\n      \"ingestorMetadata\": {\n        \"cameraType\": \"<string>\",\n        \"timeOffsetMs\": \"<integer>\",\n        \"toleranceSeconds\": \"<number>\",\n        \"captureLatencyMs\": \"<integer>\",\n        \"targetTimestampUtc\": \"<string>\",\n        \"captureTimestampSource\": \"<string>\",\n        \"rawBlobPath\": \"<string>\"\n      }\n    },\n    {\n      \"cameraId\": \"<uuid>\",\n      \"frameRequestId\": \"<string>\",\n      \"captureTimestampUtc\": \"<string>\",\n      \"mimeType\": \"<string>\",\n      \"ingestorMetadata\": {\n        \"cameraType\": \"<string>\",\n        \"timeOffsetMs\": \"<integer>\",\n        \"toleranceSeconds\": \"<number>\",\n        \"captureLatencyMs\": \"<integer>\",\n        \"targetTimestampUtc\": \"<string>\",\n        \"captureTimestampSource\": \"<string>\",\n        \"rawBlobPath\": \"<string>\"\n      }\n    }\n  ],\n  \"shipmentId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "34e6517c-5d1c-4c13-b1ad-6feddbb939ff",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "ingestor",
+                    "scans"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"siteId\": \"<uuid>\",\n  \"customerScanId\": \"<string>\",\n  \"scanTimestampUtc\": \"<string>\",\n  \"handlingUnitId\": \"<string>\",\n  \"scanMetadata\": {\n    \"key_0\": {},\n    \"key_1\": {},\n    \"key_2\": {}\n  },\n  \"captures\": [\n    {\n      \"cameraId\": \"<uuid>\",\n      \"frameRequestId\": \"<string>\",\n      \"captureTimestampUtc\": \"<string>\",\n      \"mimeType\": \"<string>\",\n      \"ingestorMetadata\": {\n        \"cameraType\": \"<string>\",\n        \"timeOffsetMs\": \"<integer>\",\n        \"toleranceSeconds\": \"<number>\",\n        \"captureLatencyMs\": \"<integer>\",\n        \"targetTimestampUtc\": \"<string>\",\n        \"captureTimestampSource\": \"<string>\",\n        \"rawBlobPath\": \"<string>\"\n      }\n    },\n    {\n      \"cameraId\": \"<uuid>\",\n      \"frameRequestId\": \"<string>\",\n      \"captureTimestampUtc\": \"<string>\",\n      \"mimeType\": \"<string>\",\n      \"ingestorMetadata\": {\n        \"cameraType\": \"<string>\",\n        \"timeOffsetMs\": \"<integer>\",\n        \"toleranceSeconds\": \"<number>\",\n        \"captureLatencyMs\": \"<integer>\",\n        \"targetTimestampUtc\": \"<string>\",\n        \"captureTimestampSource\": \"<string>\",\n        \"rawBlobPath\": \"<string>\"\n      }\n    }\n  ],\n  \"shipmentId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "f56069ae-57a0-422d-981a-c62ec0030944",
+    "name": "Pipeline Backend Admin Ingestor API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,750 @@
+{
+  "item": [
+    {
+      "id": "b3bb6a78-79ea-49cb-9998-0432f934c077",
+      "name": "Qa Classification",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8ab0f9d3-7dd5-4b01-8aed-0c99655e4d4e",
+          "name": "/v1/qa-classification/pending",
+          "request": {
+            "name": "/v1/qa-classification/pending",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "qa-classification",
+                "pending"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "50"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "siteId",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "cameraId",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "minGap",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "excludeOverlapSeconds",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "hideNoScanner",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "sortOrder",
+                  "value": "oldest"
+                },
+                {
+                  "disabled": false,
+                  "key": "capturedAfter",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "capturedBefore",
+                  "value": "<dateTime>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8916e9d5-edd6-453a-91f8-9236b857a263",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "qa-classification",
+                    "pending"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "siteId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "cameraId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "minGap",
+                      "value": "0"
+                    },
+                    {
+                      "key": "excludeOverlapSeconds",
+                      "value": "0"
+                    },
+                    {
+                      "key": "hideNoScanner",
+                      "value": "false"
+                    },
+                    {
+                      "key": "sortOrder",
+                      "value": "oldest"
+                    },
+                    {
+                      "key": "capturedAfter",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "capturedBefore",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5e1e26dc-43fa-4a1f-9c5e-272fe4536149",
+          "name": "/v1/qa-classification/summary",
+          "request": {
+            "name": "/v1/qa-classification/summary",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "qa-classification",
+                "summary"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "siteId",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "cameraId",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "minGap",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "excludeOverlapSeconds",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "hideNoScanner",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "capturedAfter",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "capturedBefore",
+                  "value": "<dateTime>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7e2b19c8-cab5-40f6-bad6-27208f170708",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "qa-classification",
+                    "summary"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "siteId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "cameraId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "minGap",
+                      "value": "0"
+                    },
+                    {
+                      "key": "excludeOverlapSeconds",
+                      "value": "0"
+                    },
+                    {
+                      "key": "hideNoScanner",
+                      "value": "false"
+                    },
+                    {
+                      "key": "capturedAfter",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "capturedBefore",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7e8ce63d-381a-4000-baac-90471b0e5160",
+          "name": "/v1/qa-classification/:scanId/review",
+          "request": {
+            "name": "/v1/qa-classification/:scanId/review",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "qa-classification",
+                ":scanId",
+                "review"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "scanId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"decision\": \"<string>\",\n  \"kochScaleFactor\": {\n    \"objective\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "694097fa-ca45-49a4-88fd-98643df56afd",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "qa-classification",
+                    ":scanId",
+                    "review"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "scanId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"decision\": \"<string>\",\n  \"kochScaleFactor\": {\n    \"objective\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0addd579-13a0-453c-9856-00a45d6eed03",
+          "name": "/v1/qa-classification/:scanId/review/reset",
+          "request": {
+            "name": "/v1/qa-classification/:scanId/review/reset",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "qa-classification",
+                ":scanId",
+                "review",
+                "reset"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "scanId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"stageRunId\": \"<uuid>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "857e8b33-398e-47ed-8c6e-5beac207f421",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "qa-classification",
+                    ":scanId",
+                    "review",
+                    "reset"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "scanId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"stageRunId\": \"<uuid>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cd95f8a8-929c-4c75-b768-7d94a9b8376d",
+          "name": "/v1/qa-classification/reviews/reset",
+          "request": {
+            "name": "/v1/qa-classification/reviews/reset",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "qa-classification",
+                "reviews",
+                "reset"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"reviews\": [\n    {\n      \"scanId\": \"<uuid>\",\n      \"stageRunId\": \"<uuid>\"\n    },\n    {\n      \"scanId\": \"<uuid>\",\n      \"stageRunId\": \"<uuid>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8d764de3-0cf9-4415-a571-163763a5ff0f",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "qa-classification",
+                    "reviews",
+                    "reset"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reviews\": [\n    {\n      \"scanId\": \"<uuid>\",\n      \"stageRunId\": \"<uuid>\"\n    },\n    {\n      \"scanId\": \"<uuid>\",\n      \"stageRunId\": \"<uuid>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c8139e62-4966-4b2b-a619-01b3b520600c",
+          "name": "/v1/qa-classification/stats",
+          "request": {
+            "name": "/v1/qa-classification/stats",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "qa-classification",
+                "stats"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "customerId",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "from",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "to",
+                  "value": "<dateTime>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dfbe967f-7505-45ce-a336-e2eeb57df2d4",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "qa-classification",
+                    "stats"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "customerId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "from",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "to",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "26021924-e9d1-49c8-8ff5-7f216ecfb99e",
+    "name": "Pipeline Backend Admin Qa Classification API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

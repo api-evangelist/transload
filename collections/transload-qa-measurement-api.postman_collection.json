@@ -1,0 +1,1099 @@
+{
+  "item": [
+    {
+      "id": "35930fbc-8d26-46be-bfd0-347d6a6cef5f",
+      "name": "Qa Measurement",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8f739bbc-5eb0-42a0-95b4-6de8d2a8cafb",
+          "name": "/v1/qa-measurement/pending",
+          "request": {
+            "name": "/v1/qa-measurement/pending",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "qa-measurement",
+                "pending"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "50"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "customerId",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "kochMinMaeCm",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "kochMaxMaeCm",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "kochMaxLengthDeviationCm",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "kochMaxWidthDeviationCm",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "kochMaxHeightDeviationCm",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "kochApplyScaleFactor",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "kochScaleFactorObjective",
+                  "value": "t30_mae"
+                },
+                {
+                  "disabled": false,
+                  "key": "kochMissingGroundTruth",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "cameraViews",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "capturedAfter",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "capturedBefore",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "minGap",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sortOrder",
+                  "value": "oldest"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "60e3450d-fba6-4804-8de6-735812114198",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "qa-measurement",
+                    "pending"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "customerId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "kochMinMaeCm",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "kochMaxMaeCm",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "kochMaxLengthDeviationCm",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "kochMaxWidthDeviationCm",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "kochMaxHeightDeviationCm",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "kochApplyScaleFactor",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "kochScaleFactorObjective",
+                      "value": "t30_mae"
+                    },
+                    {
+                      "key": "kochMissingGroundTruth",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "cameraViews",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "capturedAfter",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "capturedBefore",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "minGap",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sortOrder",
+                      "value": "oldest"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3d06bf7c-26d9-4d65-9470-faf11e4ba85b",
+          "name": "/v1/qa-measurement/summary",
+          "request": {
+            "name": "/v1/qa-measurement/summary",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "qa-measurement",
+                "summary"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "079696df-6f7e-48ca-83cf-342c167e32e6",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "qa-measurement",
+                    "summary"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "53005f19-03ac-4887-a7ab-b840f3ab2798",
+          "name": "/v1/qa-measurement/:scanId/frames",
+          "request": {
+            "name": "/v1/qa-measurement/:scanId/frames",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "qa-measurement",
+                ":scanId",
+                "frames"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "scanId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "684f9425-f5b8-4a73-890f-083a47bb39fc",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "qa-measurement",
+                    ":scanId",
+                    "frames"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "scanId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "825431dc-6b1b-427e-b147-1dea89ac92dc",
+          "name": "/v1/qa-measurement/:scanId/review",
+          "request": {
+            "name": "/v1/qa-measurement/:scanId/review",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "qa-measurement",
+                ":scanId",
+                "review"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "scanId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"decision\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e6e49751-8047-4f79-8ba3-15b04583f0e9",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "qa-measurement",
+                    ":scanId",
+                    "review"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "scanId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"decision\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "70dc9626-1bd8-4853-9b82-d19280c1fe2f",
+          "name": "/v1/qa-measurement/:scanId/review/reset",
+          "request": {
+            "name": "/v1/qa-measurement/:scanId/review/reset",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "qa-measurement",
+                ":scanId",
+                "review",
+                "reset"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "scanId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"stageRunId\": \"<uuid>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "11922d5b-e30a-40c4-9f8d-bcc80f8511fa",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "qa-measurement",
+                    ":scanId",
+                    "review",
+                    "reset"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "scanId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"stageRunId\": \"<uuid>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "19adde98-dd90-4f0c-b75e-d49f43eca24a",
+          "name": "/v1/qa-measurement/reviews/reset",
+          "request": {
+            "name": "/v1/qa-measurement/reviews/reset",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "qa-measurement",
+                "reviews",
+                "reset"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"reviews\": [\n    {\n      \"scanId\": \"<uuid>\",\n      \"stageRunId\": \"<uuid>\"\n    },\n    {\n      \"scanId\": \"<uuid>\",\n      \"stageRunId\": \"<uuid>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "986c8867-9d4f-4bdd-8f7c-0aeb2db08972",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "qa-measurement",
+                    "reviews",
+                    "reset"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reviews\": [\n    {\n      \"scanId\": \"<uuid>\",\n      \"stageRunId\": \"<uuid>\"\n    },\n    {\n      \"scanId\": \"<uuid>\",\n      \"stageRunId\": \"<uuid>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "740a6e7a-b8b5-4f68-9f02-5285e82e0548",
+          "name": "/v1/qa-measurement/bulk-review",
+          "request": {
+            "name": "/v1/qa-measurement/bulk-review",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "qa-measurement",
+                "bulk-review"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"reviews\": [\n    {\n      \"scanId\": \"<uuid>\",\n      \"decision\": \"<string>\",\n      \"reason\": \"<string>\"\n    },\n    {\n      \"scanId\": \"<uuid>\",\n      \"decision\": \"<string>\",\n      \"reason\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a4fcf12b-44b0-4e00-8cb7-84ecfcf4ea94",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "qa-measurement",
+                    "bulk-review"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reviews\": [\n    {\n      \"scanId\": \"<uuid>\",\n      \"decision\": \"<string>\",\n      \"reason\": \"<string>\"\n    },\n    {\n      \"scanId\": \"<uuid>\",\n      \"decision\": \"<string>\",\n      \"reason\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4da91f12-af62-4d1d-93ca-fda140f2a036",
+          "name": "/v1/qa-measurement/stats",
+          "request": {
+            "name": "/v1/qa-measurement/stats",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "qa-measurement",
+                "stats"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "customerId",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "from",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "to",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "includeKochDetails",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "kochDeviationThresholdCm",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "kochMaxMaeCm",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "kochMaxLengthDeviationCm",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "kochMaxWidthDeviationCm",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "kochMaxHeightDeviationCm",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "kochApplyScaleFactor",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "kochScaleFactorObjective",
+                  "value": "t30_mae"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b084d15c-10be-4890-af64-99729905fb0a",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "qa-measurement",
+                    "stats"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "customerId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "from",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "to",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "includeKochDetails",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "kochDeviationThresholdCm",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "kochMaxMaeCm",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "kochMaxLengthDeviationCm",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "kochMaxWidthDeviationCm",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "kochMaxHeightDeviationCm",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "kochApplyScaleFactor",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "kochScaleFactorObjective",
+                      "value": "t30_mae"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "eefa1172-c448-459a-be05-1f6003be015b",
+          "name": "/v1/qa-measurement/:scanId/overlay",
+          "request": {
+            "name": "/v1/qa-measurement/:scanId/overlay",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "qa-measurement",
+                ":scanId",
+                "overlay"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "expires",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "sig",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "scanId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9aecde25-556a-43e3-91d8-0def8f936df8",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "qa-measurement",
+                    ":scanId",
+                    "overlay"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "expires",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sig",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "scanId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "926df57b-6bc8-4502-ae9f-620fadcfb71a",
+    "name": "Pipeline Backend Admin Qa Measurement API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

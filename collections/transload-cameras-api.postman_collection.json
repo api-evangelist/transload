@@ -1,0 +1,496 @@
+{
+  "item": [
+    {
+      "id": "00ad4e63-1508-4d15-b596-b93888132468",
+      "name": "Cameras",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8e989102-f981-4a3d-8968-caf6cd2b5a5a",
+          "name": "/v1/cameras",
+          "request": {
+            "name": "/v1/cameras",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "cameras"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customerId\": \"<uuid>\",\n  \"siteId\": \"<uuid>\",\n  \"name\": \"<string>\",\n  \"cameraType\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"vendor\": \"<string>\",\n  \"model\": \"<string>\",\n  \"zones\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"metadata\": {\n    \"key_0\": {},\n    \"key_1\": {}\n  },\n  \"intrinsics\": {\n    \"fx\": \"<number>\",\n    \"fy\": \"<number>\",\n    \"cx\": \"<number>\",\n    \"cy\": \"<number>\",\n    \"imageWidth\": \"<integer>\",\n    \"imageHeight\": \"<integer>\",\n    \"k1\": 0,\n    \"k2\": 0,\n    \"p1\": 0,\n    \"p2\": 0,\n    \"k3\": 0\n  },\n  \"intrinsicsUndistorted\": {\n    \"fx\": \"<number>\",\n    \"fy\": \"<number>\",\n    \"cx\": \"<number>\",\n    \"cy\": \"<number>\",\n    \"width\": \"<integer>\",\n    \"height\": \"<integer>\"\n  },\n  \"extrinsics\": {\n    \"rvec\": \"\",\n    \"tvec\": \"\"\n  },\n  \"measurementConfig\": {\n    \"key_0\": {\n      \"key_0\": {}\n    },\n    \"key_1\": {\n      \"key_0\": {}\n    },\n    \"key_2\": {\n      \"key_0\": {}\n    }\n  },\n  \"config\": {\n    \"url\": \"<string>\",\n    \"username\": \"<string>\",\n    \"password\": \"<string>\",\n    \"bufferSeconds\": \"<number>\",\n    \"httpPollIntervalSeconds\": \"<number>\",\n    \"networkOffsetMs\": \"<integer>\",\n    \"zones\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"rtspTimestampSource\": \"<string>\",\n    \"encodingOffsetMs\": \"<integer>\",\n    \"cameraMetadataUrl\": \"<string>\",\n    \"onvifDeviceServiceUrl\": \"<string>\",\n    \"scanArea\": {\n      \"key_0\": {}\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "909848a7-0ad9-4087-bed4-f1460e07bbef",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "cameras"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"customerId\": \"<uuid>\",\n  \"siteId\": \"<uuid>\",\n  \"name\": \"<string>\",\n  \"cameraType\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"vendor\": \"<string>\",\n  \"model\": \"<string>\",\n  \"zones\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"metadata\": {\n    \"key_0\": {},\n    \"key_1\": {}\n  },\n  \"intrinsics\": {\n    \"fx\": \"<number>\",\n    \"fy\": \"<number>\",\n    \"cx\": \"<number>\",\n    \"cy\": \"<number>\",\n    \"imageWidth\": \"<integer>\",\n    \"imageHeight\": \"<integer>\",\n    \"k1\": 0,\n    \"k2\": 0,\n    \"p1\": 0,\n    \"p2\": 0,\n    \"k3\": 0\n  },\n  \"intrinsicsUndistorted\": {\n    \"fx\": \"<number>\",\n    \"fy\": \"<number>\",\n    \"cx\": \"<number>\",\n    \"cy\": \"<number>\",\n    \"width\": \"<integer>\",\n    \"height\": \"<integer>\"\n  },\n  \"extrinsics\": {\n    \"rvec\": \"\",\n    \"tvec\": \"\"\n  },\n  \"measurementConfig\": {\n    \"key_0\": {\n      \"key_0\": {}\n    }\n  },\n  \"config\": {\n    \"url\": \"<string>\",\n    \"username\": \"<string>\",\n    \"password\": \"<string>\",\n    \"bufferSeconds\": \"<number>\",\n    \"httpPollIntervalSeconds\": \"<number>\",\n    \"networkOffsetMs\": \"<integer>\",\n    \"zones\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"rtspTimestampSource\": \"<string>\",\n    \"encodingOffsetMs\": \"<integer>\",\n    \"cameraMetadataUrl\": \"<string>\",\n    \"onvifDeviceServiceUrl\": \"<string>\",\n    \"scanArea\": {\n      \"key_0\": {},\n      \"key_1\": {}\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ed5e4115-fcc0-4a99-9d0c-b6a541500300",
+          "name": "/v1/cameras",
+          "request": {
+            "name": "/v1/cameras",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "cameras"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "customerId",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "siteId",
+                  "value": "<uuid>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6c011b55-7445-4891-81f6-df8a97ac92a7",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "cameras"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "customerId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "siteId",
+                      "value": "<uuid>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "21023ad2-355f-4ea6-a07b-95ac66ecd352",
+          "name": "/v1/cameras/:cameraId",
+          "request": {
+            "name": "/v1/cameras/:cameraId",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "cameras",
+                ":cameraId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "cameraId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b776e26f-fd63-4618-be0b-a0e2b432f4ad",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "cameras",
+                    ":cameraId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "cameraId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "81fec358-be8f-4e32-8d8e-56b37a170c59",
+          "name": "/v1/cameras/:cameraId",
+          "request": {
+            "name": "/v1/cameras/:cameraId",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "cameras",
+                ":cameraId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "cameraId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"cameraType\": \"<string>\",\n  \"status\": \"<string>\",\n  \"vendor\": \"<string>\",\n  \"model\": \"<string>\",\n  \"zones\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"metadata\": {\n    \"key_0\": {}\n  },\n  \"intrinsics\": {\n    \"fx\": \"<number>\",\n    \"fy\": \"<number>\",\n    \"cx\": \"<number>\",\n    \"cy\": \"<number>\",\n    \"imageWidth\": \"<integer>\",\n    \"imageHeight\": \"<integer>\",\n    \"k1\": 0,\n    \"k2\": 0,\n    \"p1\": 0,\n    \"p2\": 0,\n    \"k3\": 0\n  },\n  \"intrinsicsUndistorted\": {\n    \"fx\": \"<number>\",\n    \"fy\": \"<number>\",\n    \"cx\": \"<number>\",\n    \"cy\": \"<number>\",\n    \"width\": \"<integer>\",\n    \"height\": \"<integer>\"\n  },\n  \"extrinsics\": {\n    \"rvec\": \"\",\n    \"tvec\": \"\"\n  },\n  \"measurementConfig\": {\n    \"key_0\": {\n      \"key_0\": {}\n    },\n    \"key_1\": {\n      \"key_0\": {},\n      \"key_1\": {},\n      \"key_2\": {}\n    },\n    \"key_2\": {\n      \"key_0\": {},\n      \"key_1\": {},\n      \"key_2\": {},\n      \"key_3\": {}\n    }\n  },\n  \"config\": {\n    \"url\": \"<string>\",\n    \"username\": \"<string>\",\n    \"password\": \"<string>\",\n    \"bufferSeconds\": \"<number>\",\n    \"httpPollIntervalSeconds\": \"<number>\",\n    \"networkOffsetMs\": \"<integer>\",\n    \"zones\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"rtspTimestampSource\": \"<string>\",\n    \"encodingOffsetMs\": \"<integer>\",\n    \"cameraMetadataUrl\": \"<string>\",\n    \"onvifDeviceServiceUrl\": \"<string>\",\n    \"scanArea\": {\n      \"key_0\": {}\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "19a242d4-2a65-43c4-b18a-d5b8059ff5e7",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "cameras",
+                    ":cameraId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "cameraId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"cameraType\": \"<string>\",\n  \"status\": \"<string>\",\n  \"vendor\": \"<string>\",\n  \"model\": \"<string>\",\n  \"zones\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"metadata\": {\n    \"key_0\": {}\n  },\n  \"intrinsics\": {\n    \"fx\": \"<number>\",\n    \"fy\": \"<number>\",\n    \"cx\": \"<number>\",\n    \"cy\": \"<number>\",\n    \"imageWidth\": \"<integer>\",\n    \"imageHeight\": \"<integer>\",\n    \"k1\": 0,\n    \"k2\": 0,\n    \"p1\": 0,\n    \"p2\": 0,\n    \"k3\": 0\n  },\n  \"intrinsicsUndistorted\": {\n    \"fx\": \"<number>\",\n    \"fy\": \"<number>\",\n    \"cx\": \"<number>\",\n    \"cy\": \"<number>\",\n    \"width\": \"<integer>\",\n    \"height\": \"<integer>\"\n  },\n  \"extrinsics\": {\n    \"rvec\": \"\",\n    \"tvec\": \"\"\n  },\n  \"measurementConfig\": {\n    \"key_0\": {\n      \"key_0\": {},\n      \"key_1\": {},\n      \"key_2\": {}\n    }\n  },\n  \"config\": {\n    \"url\": \"<string>\",\n    \"username\": \"<string>\",\n    \"password\": \"<string>\",\n    \"bufferSeconds\": \"<number>\",\n    \"httpPollIntervalSeconds\": \"<number>\",\n    \"networkOffsetMs\": \"<integer>\",\n    \"zones\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"rtspTimestampSource\": \"<string>\",\n    \"encodingOffsetMs\": \"<integer>\",\n    \"cameraMetadataUrl\": \"<string>\",\n    \"onvifDeviceServiceUrl\": \"<string>\",\n    \"scanArea\": {\n      \"key_0\": {}\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6c6f3b1d-0668-4a1e-960e-dfdc0b59c03d",
+          "name": "/v1/cameras/:cameraId",
+          "request": {
+            "name": "/v1/cameras/:cameraId",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "cameras",
+                ":cameraId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "cameraId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e6916080-5e25-40e3-bc4f-65d68d2f7ef8",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "cameras",
+                    ":cameraId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "cameraId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "afe0d6e8-dace-41fd-982d-f2c1f204405b",
+    "name": "Pipeline Backend Admin Cameras API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

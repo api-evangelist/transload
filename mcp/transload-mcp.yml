@@ -2,49 +2,54 @@ generated: '2026-07-21'
 method: derived
 source: openapi/transload-pipeline-backend-openapi.json
 status: candidate
-notes: >-
-  Transload publishes no official MCP server (none found in docs, npm, or MCP
-  registries as of 2026-07-21). This is a candidate tool list derived from the
-  publicly served OpenAPI at https://api.transload.io/docs/json. The spec
-  declares no operationIds, so tool names are derived from method + path.
-  All operations require bearer authentication.
+notes: Transload publishes no official MCP server (none found in docs, npm, or MCP registries as of 2026-07-21).
+  This is a candidate tool list derived from the publicly served OpenAPI at https://api.transload.io/docs/json.
+  The spec declares no operationIds, so tool names are derived from method + path. All operations require
+  bearer authentication.
 server:
   name: transload-pipeline
   transport: http
 tools:
-  - name: list_scans
-    description: List freight measurement scans for a customer, filterable by pipeline stage (ingestion, dewarping, classification, measurement, qa), stage status, and capture time window
-    source_operation: openapi/transload-pipeline-backend-openapi.json#GET /v1/scans
-  - name: get_scan
-    description: Retrieve a single scan by id
-    source_operation: openapi/transload-pipeline-backend-openapi.json#GET /v1/scans/{id}
-  - name: get_scan_stats
-    description: Retrieve aggregate scan statistics
-    source_operation: openapi/transload-pipeline-backend-openapi.json#GET /v1/scans/stats
-  - name: get_handling_unit_latest_result
-    description: Retrieve the latest AI measurement result for a handling unit
-    source_operation: openapi/transload-pipeline-backend-openapi.json#GET /v1/handling-units/{handlingUnit}/latest-result
-  - name: list_ai_results
-    description: List AI measurement results
-    source_operation: openapi/transload-pipeline-backend-openapi.json#GET /v1/ai-results
-  - name: list_customers
-    description: List customers
-    source_operation: openapi/transload-pipeline-backend-openapi.json#GET /v1/customers
-  - name: list_sites
-    description: List warehouse sites
-    source_operation: openapi/transload-pipeline-backend-openapi.json#GET /v1/sites
-  - name: list_cameras
-    description: List registered CCTV cameras
-    source_operation: openapi/transload-pipeline-backend-openapi.json#GET /v1/cameras
-  - name: list_processing_jobs
-    description: List processing jobs
-    source_operation: openapi/transload-pipeline-backend-openapi.json#GET /v1/processing-jobs
-  - name: list_customer_handling_units
-    description: List handling units visible to the authenticated customer
-    source_operation: openapi/transload-pipeline-backend-openapi.json#GET /v1/customer/data/handling-units
-  - name: export_customer_handling_units
-    description: Export the authenticated customer's handling-unit data
-    source_operation: openapi/transload-pipeline-backend-openapi.json#GET /v1/customer/data/handling-units/export
-  - name: get_customer_shipment
-    description: Retrieve a shipment visible to the authenticated customer
-    source_operation: openapi/transload-pipeline-backend-openapi.json#GET /v1/customer/data/shipments/{shipmentId}
+- name: list_scans
+  description: List freight measurement scans for a customer, filterable by pipeline stage (ingestion,
+    dewarping, classification, measurement, qa), stage status, and capture time window
+  source_operation: openapi/transload-pipeline-backend-openapi.json#GET /v1/scans
+- name: get_scan
+  description: Retrieve a single scan by id
+  source_operation: openapi/transload-pipeline-backend-openapi.json#GET /v1/scans/{id}
+- name: get_scan_stats
+  description: Retrieve aggregate scan statistics
+  source_operation: openapi/transload-pipeline-backend-openapi.json#GET /v1/scans/stats
+- name: get_handling_unit_latest_result
+  description: Retrieve the latest AI measurement result for a handling unit
+  source_operation: openapi/transload-pipeline-backend-openapi.json#GET /v1/handling-units/{handlingUnit}/latest-result
+- name: list_ai_results
+  description: List AI measurement results
+  source_operation: openapi/transload-pipeline-backend-openapi.json#GET /v1/ai-results
+- name: list_customers
+  description: List customers
+  source_operation: openapi/transload-pipeline-backend-openapi.json#GET /v1/customers
+- name: list_sites
+  description: List warehouse sites
+  source_operation: openapi/transload-pipeline-backend-openapi.json#GET /v1/sites
+- name: list_cameras
+  description: List registered CCTV cameras
+  source_operation: openapi/transload-pipeline-backend-openapi.json#GET /v1/cameras
+- name: list_processing_jobs
+  description: List processing jobs
+  source_operation: openapi/transload-pipeline-backend-openapi.json#GET /v1/processing-jobs
+- name: list_customer_handling_units
+  description: List handling units visible to the authenticated customer
+  source_operation: openapi/transload-pipeline-backend-openapi.json#GET /v1/customer/data/handling-units
+- name: export_customer_handling_units
+  description: Export the authenticated customer's handling-unit data
+  source_operation: openapi/transload-pipeline-backend-openapi.json#GET /v1/customer/data/handling-units/export
+- name: get_customer_shipment
+  description: Retrieve a shipment visible to the authenticated customer
+  source_operation: openapi/transload-pipeline-backend-openapi.json#GET /v1/customer/data/shipments/{shipmentId}
+deployment:
+  mode: none
+  verified: derived
+  tools: 12
+  checked: '2026-08-12'
+  source: catalog MCP census

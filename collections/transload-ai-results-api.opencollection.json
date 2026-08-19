@@ -1,0 +1,100 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Pipeline Backend Admin Ai Results API",
+    "version": "0.1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Ai Results",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /v1/ai-results",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/ai-results",
+            "params": [
+              {
+                "name": "customerId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "handlingUnit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "shipmentId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "resultType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeUnreviewed",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /v1/ai-results/{resultId}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/ai-results/:resultId",
+            "params": [
+              {
+                "name": "resultId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /v1/ai-results/{resultId}/artifacts/{artifactKind}/url",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/ai-results/:resultId/artifacts/:artifactKind/url",
+            "params": [
+              {
+                "name": "resultId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "artifactKind",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

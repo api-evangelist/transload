@@ -1,0 +1,221 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Pipeline Backend Admin Qa Classification API",
+    "version": "0.1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Qa Classification",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /v1/qa-classification/pending",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/qa-classification/pending",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "siteId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "cameraId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "minGap",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "excludeOverlapSeconds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "hideNoScanner",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "excludedCustomerIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sortOrder",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "capturedAfter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "capturedBefore",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /v1/qa-classification/summary",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/qa-classification/summary",
+            "params": [
+              {
+                "name": "siteId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "cameraId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "minGap",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "excludeOverlapSeconds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "hideNoScanner",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "capturedAfter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "capturedBefore",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /v1/qa-classification/{scanId}/review",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/qa-classification/:scanId/review",
+            "params": [
+              {
+                "name": "scanId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /v1/qa-classification/{scanId}/review/reset",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/qa-classification/:scanId/review/reset",
+            "params": [
+              {
+                "name": "scanId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /v1/qa-classification/reviews/reset",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/qa-classification/reviews/reset",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GET /v1/qa-classification/stats",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/qa-classification/stats",
+            "params": [
+              {
+                "name": "customerId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "from",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "to",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

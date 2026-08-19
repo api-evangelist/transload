@@ -1,0 +1,435 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Pipeline Backend Admin Qa API",
+    "version": "0.1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Qa",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "POST /v1/qa/koch-reference-sync/request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/qa/koch-reference-sync/request"
+          }
+        },
+        {
+          "info": {
+            "name": "GET /v1/qa/leaderboard",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/qa/leaderboard"
+          }
+        },
+        {
+          "info": {
+            "name": "GET /v1/qa/leaderboard/daily",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/qa/leaderboard/daily",
+            "params": [
+              {
+                "name": "days",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "tz",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /v1/qa/summary",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/qa/summary",
+            "params": [
+              {
+                "name": "siteId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "cameraId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "minGap",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "excludeOverlapSeconds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "hideNoScanner",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "capturedAfter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "capturedBefore",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /v1/qa/{scanId}/review",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/qa/:scanId/review",
+            "params": [
+              {
+                "name": "scanId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /v1/qa/{scanId}/review/reset",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/qa/:scanId/review/reset",
+            "params": [
+              {
+                "name": "scanId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /v1/qa/reviews/reset",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/qa/reviews/reset",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GET /v1/qa/stats",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/qa/stats",
+            "params": [
+              {
+                "name": "customerId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "from",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "to",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /v1/qa/pending",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/qa/pending",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "customerId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "kochMinMaeCm",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "kochMaxMaeCm",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "kochMaxLengthDeviationCm",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "kochMaxWidthDeviationCm",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "kochMaxHeightDeviationCm",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "kochApplyScaleFactor",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "kochScaleFactorObjective",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "kochMissingGroundTruth",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "cameraViews",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "excludedCustomerIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "capturedAfter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "capturedBefore",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "minGap",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sortOrder",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /v1/qa/{scanId}/frames",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/qa/:scanId/frames",
+            "params": [
+              {
+                "name": "scanId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /v1/qa/{scanId}/overlay",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/qa/:scanId/overlay",
+            "params": [
+              {
+                "name": "expires",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sig",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "scanId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /v1/qa/camera-views",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/qa/camera-views",
+            "params": [
+              {
+                "name": "customerId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "excludedCustomerIds",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /v1/qa/koch-auto-review-by-filter",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/qa/koch-auto-review-by-filter",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /v1/qa/koch-auto-scale",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/qa/koch-auto-scale",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /v1/qa/auth/request-link",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/qa/auth/request-link",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /v1/qa/auth/verify",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/qa/auth/verify",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /v1/qa/auth/logout",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/qa/auth/logout"
+          }
+        },
+        {
+          "info": {
+            "name": "GET /v1/qa/auth/session",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/qa/auth/session"
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

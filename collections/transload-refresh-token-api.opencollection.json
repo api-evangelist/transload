@@ -1,0 +1,34 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Pipeline Backend Admin Refresh Token API",
+    "version": "0.1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Refresh Token",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "POST /refresh-token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/refresh-token"
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

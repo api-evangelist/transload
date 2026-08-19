@@ -1,0 +1,487 @@
+{
+  "item": [
+    {
+      "id": "01b6fb10-1907-46d9-b705-6dd088831bc9",
+      "name": "Sites",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b73f6545-11c1-46af-8bd8-87431aea0373",
+          "name": "/v1/sites",
+          "request": {
+            "name": "/v1/sites",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "sites"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customerId\": \"<uuid>\",\n  \"name\": \"<string>\",\n  \"slug\": \"<string>\",\n  \"address\": \"<string>\",\n  \"timezone\": \"UTC\",\n  \"metadata\": {\n    \"key_0\": {}\n  },\n  \"scanSource\": \"<string>\",\n  \"customerDatabase\": {\n    \"scanQuery\": \"<string>\",\n    \"scanQueryAutodetect\": false,\n    \"timezone\": \"UTC\"\n  },\n  \"scanFields\": {\n    \"xField\": \"locXPos\",\n    \"yField\": \"locYPos\",\n    \"zField\": null,\n    \"zDefaultCm\": 100,\n    \"zoneField\": null,\n    \"handlingUnitField\": \"handlingUnitId\",\n    \"shipmentField\": null\n  },\n  \"captureConfig\": {\n    \"pollIntervalSeconds\": 2,\n    \"toleranceSeconds\": 2,\n    \"scanLookbackSeconds\": 300,\n    \"localFrameTtlHours\": 48,\n    \"bufferHardMaxSeconds\": 600,\n    \"bufferFps\": 30,\n    \"fovMarginSide\": 0.05,\n    \"fovMarginTop\": 0.2\n  },\n  \"scandropConfig\": {\n    \"enabled\": false,\n    \"directory\": \"<string>\",\n    \"processedDirectory\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4f49bee6-199c-43d3-83d1-a442680a0f0d",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "sites"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"customerId\": \"<uuid>\",\n  \"name\": \"<string>\",\n  \"slug\": \"<string>\",\n  \"address\": \"<string>\",\n  \"timezone\": \"UTC\",\n  \"metadata\": {\n    \"key_0\": {}\n  },\n  \"scanSource\": \"<string>\",\n  \"customerDatabase\": {\n    \"scanQuery\": \"<string>\",\n    \"scanQueryAutodetect\": false,\n    \"timezone\": \"UTC\"\n  },\n  \"scanFields\": {\n    \"xField\": \"locXPos\",\n    \"yField\": \"locYPos\",\n    \"zField\": null,\n    \"zDefaultCm\": 100,\n    \"zoneField\": null,\n    \"handlingUnitField\": \"handlingUnitId\",\n    \"shipmentField\": null\n  },\n  \"captureConfig\": {\n    \"pollIntervalSeconds\": 2,\n    \"toleranceSeconds\": 2,\n    \"scanLookbackSeconds\": 300,\n    \"localFrameTtlHours\": 48,\n    \"bufferHardMaxSeconds\": 600,\n    \"bufferFps\": 30,\n    \"fovMarginSide\": 0.05,\n    \"fovMarginTop\": 0.2\n  },\n  \"scandropConfig\": {\n    \"enabled\": false,\n    \"directory\": \"<string>\",\n    \"processedDirectory\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ff64d3f8-1850-49dc-907e-73e44342a687",
+          "name": "/v1/sites",
+          "request": {
+            "name": "/v1/sites",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "sites"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "customerId",
+                  "value": "<uuid>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c31822b7-8e68-4612-892a-2e8e696890f5",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "sites"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "customerId",
+                      "value": "<uuid>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1d6f8ee5-88c7-46c5-9377-30ce7bb77818",
+          "name": "/v1/sites/:siteId",
+          "request": {
+            "name": "/v1/sites/:siteId",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "sites",
+                ":siteId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "siteId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e57bd16e-1dee-4aa4-b041-91e40e960c2c",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "sites",
+                    ":siteId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "siteId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "46d84121-b250-4073-b159-ee6756536d3f",
+          "name": "/v1/sites/:siteId",
+          "request": {
+            "name": "/v1/sites/:siteId",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "sites",
+                ":siteId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "siteId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"slug\": \"<string>\",\n  \"address\": \"<string>\",\n  \"timezone\": \"<string>\",\n  \"metadata\": {\n    \"key_0\": {}\n  },\n  \"scanSource\": \"<string>\",\n  \"customerDatabase\": {\n    \"scanQuery\": \"<string>\",\n    \"scanQueryAutodetect\": false,\n    \"timezone\": \"UTC\"\n  },\n  \"scanFields\": {\n    \"xField\": \"locXPos\",\n    \"yField\": \"locYPos\",\n    \"zField\": null,\n    \"zDefaultCm\": 100,\n    \"zoneField\": null,\n    \"handlingUnitField\": \"handlingUnitId\",\n    \"shipmentField\": null\n  },\n  \"captureConfig\": {\n    \"pollIntervalSeconds\": 2,\n    \"toleranceSeconds\": 2,\n    \"scanLookbackSeconds\": 300,\n    \"localFrameTtlHours\": 48,\n    \"bufferHardMaxSeconds\": 600,\n    \"bufferFps\": 30,\n    \"fovMarginSide\": 0.05,\n    \"fovMarginTop\": 0.2\n  },\n  \"scandropConfig\": {\n    \"enabled\": false,\n    \"directory\": \"<string>\",\n    \"processedDirectory\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "be92ce33-97a7-4d14-ae80-f0880427761c",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "sites",
+                    ":siteId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "siteId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"slug\": \"<string>\",\n  \"address\": \"<string>\",\n  \"timezone\": \"<string>\",\n  \"metadata\": {\n    \"key_0\": {}\n  },\n  \"scanSource\": \"<string>\",\n  \"customerDatabase\": {\n    \"scanQuery\": \"<string>\",\n    \"scanQueryAutodetect\": false,\n    \"timezone\": \"UTC\"\n  },\n  \"scanFields\": {\n    \"xField\": \"locXPos\",\n    \"yField\": \"locYPos\",\n    \"zField\": null,\n    \"zDefaultCm\": 100,\n    \"zoneField\": null,\n    \"handlingUnitField\": \"handlingUnitId\",\n    \"shipmentField\": null\n  },\n  \"captureConfig\": {\n    \"pollIntervalSeconds\": 2,\n    \"toleranceSeconds\": 2,\n    \"scanLookbackSeconds\": 300,\n    \"localFrameTtlHours\": 48,\n    \"bufferHardMaxSeconds\": 600,\n    \"bufferFps\": 30,\n    \"fovMarginSide\": 0.05,\n    \"fovMarginTop\": 0.2\n  },\n  \"scandropConfig\": {\n    \"enabled\": false,\n    \"directory\": \"<string>\",\n    \"processedDirectory\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9d839a8b-fc7c-4fcb-8d7d-168dbd98493a",
+          "name": "/v1/sites/:siteId",
+          "request": {
+            "name": "/v1/sites/:siteId",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "sites",
+                ":siteId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "siteId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ffd87082-15ca-4147-92bd-684c189eda35",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "sites",
+                    ":siteId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "siteId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "3a0284ac-2e95-4649-a2b4-48cbc4f9d936",
+    "name": "Pipeline Backend Admin Sites API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

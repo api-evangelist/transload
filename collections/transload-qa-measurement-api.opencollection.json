@@ -1,0 +1,312 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Pipeline Backend Admin Qa Measurement API",
+    "version": "0.1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Qa Measurement",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /v1/qa-measurement/pending",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/qa-measurement/pending",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "customerId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "kochMinMaeCm",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "kochMaxMaeCm",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "kochMaxLengthDeviationCm",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "kochMaxWidthDeviationCm",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "kochMaxHeightDeviationCm",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "kochApplyScaleFactor",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "kochScaleFactorObjective",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "kochMissingGroundTruth",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "cameraViews",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "excludedCustomerIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "capturedAfter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "capturedBefore",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "minGap",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sortOrder",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /v1/qa-measurement/summary",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/qa-measurement/summary"
+          }
+        },
+        {
+          "info": {
+            "name": "GET /v1/qa-measurement/{scanId}/frames",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/qa-measurement/:scanId/frames",
+            "params": [
+              {
+                "name": "scanId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /v1/qa-measurement/{scanId}/review",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/qa-measurement/:scanId/review",
+            "params": [
+              {
+                "name": "scanId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /v1/qa-measurement/{scanId}/review/reset",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/qa-measurement/:scanId/review/reset",
+            "params": [
+              {
+                "name": "scanId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /v1/qa-measurement/reviews/reset",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/qa-measurement/reviews/reset",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /v1/qa-measurement/bulk-review",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/qa-measurement/bulk-review",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GET /v1/qa-measurement/stats",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/qa-measurement/stats",
+            "params": [
+              {
+                "name": "customerId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "from",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "to",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeKochDetails",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "kochDeviationThresholdCm",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "kochMaxMaeCm",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "kochMaxLengthDeviationCm",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "kochMaxWidthDeviationCm",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "kochMaxHeightDeviationCm",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "kochApplyScaleFactor",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "kochScaleFactorObjective",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /v1/qa-measurement/{scanId}/overlay",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/qa-measurement/:scanId/overlay",
+            "params": [
+              {
+                "name": "expires",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sig",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "scanId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,348 @@
+{
+  "item": [
+    {
+      "id": "ee5fa2e6-593b-42cd-aa13-4764d81f1bd3",
+      "name": "Media Assets",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a27cbaf4-0d7d-4eca-9ef9-9c2f86406328",
+          "name": "/v1/media-assets",
+          "request": {
+            "name": "/v1/media-assets",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "media-assets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customerId\": \"<uuid>\",\n  \"siteId\": \"<uuid>\",\n  \"cameraId\": \"<uuid>\",\n  \"kind\": \"<string>\",\n  \"storage\": {\n    \"account\": \"<string>\",\n    \"container\": \"<string>\",\n    \"path\": \"<string>\",\n    \"provider\": \"<string>\",\n    \"signedUrl\": \"<uri>\",\n    \"signedUrlExpiresAt\": \"<dateTime>\"\n  },\n  \"capturedAtStart\": \"<dateTime>\",\n  \"handlingUnitId\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"capturedAtEnd\": \"<dateTime>\",\n  \"mimeType\": \"<string>\",\n  \"checksumSha256\": \"<string>\",\n  \"sizeBytes\": \"<integer>\",\n  \"durationMs\": \"<integer>\",\n  \"width\": \"<integer>\",\n  \"height\": \"<integer>\",\n  \"shipmentId\": \"<string>\",\n  \"sourceScanId\": \"<string>\",\n  \"sourceScanTimestamp\": \"<dateTime>\",\n  \"sourceMetadata\": {\n    \"key_0\": {},\n    \"key_1\": {},\n    \"key_2\": {}\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "47e4a884-c271-44c3-ba3b-ec58b9f8c47e",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "media-assets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"customerId\": \"<uuid>\",\n  \"siteId\": \"<uuid>\",\n  \"cameraId\": \"<uuid>\",\n  \"kind\": \"<string>\",\n  \"storage\": {\n    \"account\": \"<string>\",\n    \"container\": \"<string>\",\n    \"path\": \"<string>\",\n    \"provider\": \"<string>\",\n    \"signedUrl\": \"<uri>\",\n    \"signedUrlExpiresAt\": \"<dateTime>\"\n  },\n  \"capturedAtStart\": \"<dateTime>\",\n  \"handlingUnitId\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"capturedAtEnd\": \"<dateTime>\",\n  \"mimeType\": \"<string>\",\n  \"checksumSha256\": \"<string>\",\n  \"sizeBytes\": \"<integer>\",\n  \"durationMs\": \"<integer>\",\n  \"width\": \"<integer>\",\n  \"height\": \"<integer>\",\n  \"shipmentId\": \"<string>\",\n  \"sourceScanId\": \"<string>\",\n  \"sourceScanTimestamp\": \"<dateTime>\",\n  \"sourceMetadata\": {\n    \"key_0\": {}\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0c4d2e0c-615b-467e-9894-c0448cc18845",
+          "name": "/v1/media-assets",
+          "request": {
+            "name": "/v1/media-assets",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "media-assets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "customerId",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "siteId",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "cameraId",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "handlingUnitId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "shipmentId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "from",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "to",
+                  "value": "<dateTime>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b171163c-97c9-4955-bc83-06c6d46d676f",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "media-assets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "customerId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "siteId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "cameraId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "handlingUnitId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "shipmentId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "from",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "to",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "85761ff0-5d32-4287-93c3-e114427eb0b4",
+          "name": "/v1/media-assets/:mediaAssetId",
+          "request": {
+            "name": "/v1/media-assets/:mediaAssetId",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "media-assets",
+                ":mediaAssetId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "mediaAssetId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9af3b197-4311-4a9b-b1cf-c410bcc1d8ee",
+              "name": "Default Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "media-assets",
+                    ":mediaAssetId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "mediaAssetId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "166300da-e464-42bb-85cc-0095621d4d11",
+    "name": "Pipeline Backend Admin Media Assets API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

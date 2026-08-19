@@ -1,0 +1,34 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Pipeline Backend Admin Readyz API",
+    "version": "0.1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Readyz",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /readyz",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/readyz"
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
