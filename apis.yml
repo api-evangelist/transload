@@ -39,6 +39,16 @@ tags:
 - Company
 - Logistics
 - Freight
+- Computer-Vision
+- Warehouses
+- Supply Chain
+- Measurements
+- Camera
+- Trucking
+tags_raw:
+- Company
+- Logistics
+- Freight
 - Computer Vision
 - Warehouses
 - Supply Chain
@@ -94,6 +104,8 @@ apis:
   humanURL: https://api.transload.io/docs
   baseURL: https://api.transload.io
   tags:
+  - Camera
+  tags_raw:
   - Cameras
   properties:
   - type: OpenAPI
@@ -108,6 +120,8 @@ apis:
   humanURL: https://api.transload.io/docs
   baseURL: https://api.transload.io
   tags:
+  - Customers
+  tags_raw:
   - Customer
   properties:
   - type: OpenAPI
@@ -136,6 +150,8 @@ apis:
   humanURL: https://api.transload.io/docs
   baseURL: https://api.transload.io
   tags:
+  - Export
+  tags_raw:
   - Exports
   properties:
   - type: OpenAPI
@@ -206,6 +222,8 @@ apis:
   humanURL: https://api.transload.io/docs
   baseURL: https://api.transload.io
   tags:
+  - Measurements
+  tags_raw:
   - Measurement
   properties:
   - type: OpenAPI
@@ -248,6 +266,8 @@ apis:
   humanURL: https://api.transload.io/docs
   baseURL: https://api.transload.io
   tags:
+  - QA
+  tags_raw:
   - Qa
   properties:
   - type: OpenAPI
