@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Pipeline Backend Admin Handling Units API
+  title: Pipeline Backend Handling Units API
   version: 0.1.0
 security:
 - bearerAuth: []
@@ -27,6 +27,10 @@ paths:
           description: Default Response
       tags:
       - Handling Units
+      summary: Get handling units by handling unit latest result
+      x-summary-source: derived
+      operationId: getV1HandlingUnitsByHandlingUnitLatestResult
+      x-operation-id-source: derived
 components:
   securitySchemes:
     bearerAuth:

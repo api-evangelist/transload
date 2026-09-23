@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Pipeline Backend Admin Internal API
+  title: Pipeline Backend Internal API
   version: 0.1.0
 security:
 - bearerAuth: []
@@ -21,6 +21,10 @@ paths:
           description: Default Response
       tags:
       - Internal
+      summary: Create internal jobs by job id run
+      x-summary-source: derived
+      operationId: postInternalJobsByJobIdRun
+      x-operation-id-source: derived
   /v1/internal/koch-pending-measurement-qa-handling-units:
     get:
       parameters:
@@ -42,6 +46,10 @@ paths:
           description: Default Response
       tags:
       - Internal
+      summary: Get internal koch pending measurement qa handling units
+      x-summary-source: derived
+      operationId: getV1InternalKochPendingMeasurementQaHandlingUnits
+      x-operation-id-source: derived
   /v1/internal/import-reference-measurements:
     post:
       requestBody:
@@ -99,6 +107,10 @@ paths:
           description: Default Response
       tags:
       - Internal
+      summary: Create internal import reference measurements
+      x-summary-source: derived
+      operationId: postV1InternalImportReferenceMeasurements
+      x-operation-id-source: derived
   /v1/internal/process-classification:
     post:
       responses:
@@ -106,6 +118,10 @@ paths:
           description: Default Response
       tags:
       - Internal
+      summary: Create internal process classification
+      x-summary-source: derived
+      operationId: postV1InternalProcessClassification
+      x-operation-id-source: derived
   /v1/internal/classification-result:
     post:
       requestBody:
@@ -129,28 +145,33 @@ paths:
                     scanner_present:
                       type: boolean
                     is_measurable:
-                      type: boolean
-                      nullable: true
+                      type:
+                      - boolean
+                      - 'null'
                     confidence:
-                      type: number
-                      nullable: true
+                      type:
+                      - number
+                      - 'null'
                     gap:
-                      type: number
-                      nullable: true
+                      type:
+                      - number
+                      - 'null'
                     best_frame:
-                      type: string
-                      nullable: true
+                      type:
+                      - string
+                      - 'null'
                     review_flags:
-                      type: array
+                      type:
+                      - array
+                      - 'null'
                       items:
                         type: string
-                      nullable: true
                     signals:
-                      type: object
+                      type:
+                      - object
+                      - 'null'
                       additionalProperties: {}
-                      nullable: true
-                    segmentation:
-                      nullable: true
+                    segmentation: {}
                   required:
                   - scanner_present
                   - confidence
@@ -165,6 +186,10 @@ paths:
           description: Default Response
       tags:
       - Internal
+      summary: Create internal classification result
+      x-summary-source: derived
+      operationId: postV1InternalClassificationResult
+      x-operation-id-source: derived
   /v1/internal/classification-recover-polled:
     post:
       requestBody:
@@ -188,6 +213,10 @@ paths:
           description: Default Response
       tags:
       - Internal
+      summary: Create internal classification recover polled
+      x-summary-source: derived
+      operationId: postV1InternalClassificationRecoverPolled
+      x-operation-id-source: derived
   /v1/internal/classification-reset:
     post:
       requestBody:
@@ -219,6 +248,10 @@ paths:
           description: Default Response
       tags:
       - Internal
+      summary: Create internal classification reset
+      x-summary-source: derived
+      operationId: postV1InternalClassificationReset
+      x-operation-id-source: derived
   /v1/internal/process-dewarping:
     post:
       responses:
@@ -226,6 +259,10 @@ paths:
           description: Default Response
       tags:
       - Internal
+      summary: Create internal process dewarping
+      x-summary-source: derived
+      operationId: postV1InternalProcessDewarping
+      x-operation-id-source: derived
   /v1/internal/dewarping-reset:
     post:
       requestBody:
@@ -254,6 +291,10 @@ paths:
           description: Default Response
       tags:
       - Internal
+      summary: Create internal dewarping reset
+      x-summary-source: derived
+      operationId: postV1InternalDewarpingReset
+      x-operation-id-source: derived
   /v1/internal/dewarping-reject-stuck:
     post:
       requestBody:
@@ -278,6 +319,10 @@ paths:
           description: Default Response
       tags:
       - Internal
+      summary: Create internal dewarping reject stuck
+      x-summary-source: derived
+      operationId: postV1InternalDewarpingRejectStuck
+      x-operation-id-source: derived
   /v1/internal/measurement-ready-scans:
     get:
       parameters:
@@ -309,6 +354,10 @@ paths:
           description: Default Response
       tags:
       - Internal
+      summary: Get internal measurement ready scans
+      x-summary-source: derived
+      operationId: getV1InternalMeasurementReadyScans
+      x-operation-id-source: derived
   /v1/internal/measurement-reset:
     post:
       requestBody:
@@ -337,6 +386,10 @@ paths:
           description: Default Response
       tags:
       - Internal
+      summary: Create internal measurement reset
+      x-summary-source: derived
+      operationId: postV1InternalMeasurementReset
+      x-operation-id-source: derived
   /v1/internal/measurement-results:
     post:
       requestBody:
@@ -383,6 +436,10 @@ paths:
           description: Default Response
       tags:
       - Internal
+      summary: Create internal measurement results
+      x-summary-source: derived
+      operationId: postV1InternalMeasurementResults
+      x-operation-id-source: derived
   /v1/internal/reviewed-scan-images:
     get:
       parameters:
@@ -409,6 +466,10 @@ paths:
           description: Default Response
       tags:
       - Internal
+      summary: Get internal reviewed scan images
+      x-summary-source: derived
+      operationId: getV1InternalReviewedScanImages
+      x-operation-id-source: derived
   /v1/internal/process-privacy-blur:
     post:
       requestBody:
@@ -437,6 +498,10 @@ paths:
           description: Default Response
       tags:
       - Internal
+      summary: Create internal process privacy blur
+      x-summary-source: derived
+      operationId: postV1InternalProcessPrivacyBlur
+      x-operation-id-source: derived
   /v1/internal/process-measurement:
     post:
       responses:
@@ -444,6 +509,10 @@ paths:
           description: Default Response
       tags:
       - Internal
+      summary: Create internal process measurement
+      x-summary-source: derived
+      operationId: postV1InternalProcessMeasurement
+      x-operation-id-source: derived
 components:
   securitySchemes:
     bearerAuth:

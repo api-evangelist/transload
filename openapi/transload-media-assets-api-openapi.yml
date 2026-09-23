@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Pipeline Backend Admin Media Assets API
+  title: Pipeline Backend Media Assets API
   version: 0.1.0
 security:
 - bearerAuth: []
@@ -104,6 +104,10 @@ paths:
           description: Default Response
       tags:
       - Media Assets
+      summary: Create media assets
+      x-summary-source: derived
+      operationId: postV1MediaAssets
+      x-operation-id-source: derived
     get:
       parameters:
       - schema:
@@ -151,6 +155,10 @@ paths:
           description: Default Response
       tags:
       - Media Assets
+      summary: Get media assets
+      x-summary-source: derived
+      operationId: getV1MediaAssets
+      x-operation-id-source: derived
   /v1/media-assets/{mediaAssetId}:
     get:
       parameters:
@@ -165,6 +173,10 @@ paths:
           description: Default Response
       tags:
       - Media Assets
+      summary: Get media assets by media asset id
+      x-summary-source: derived
+      operationId: getV1MediaAssetsByMediaAssetId
+      x-operation-id-source: derived
 components:
   securitySchemes:
     bearerAuth:

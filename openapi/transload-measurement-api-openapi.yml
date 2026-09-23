@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Pipeline Backend Admin Measurement API
+  title: Pipeline Backend Measurement API
   version: 0.1.0
 security:
 - bearerAuth: []
@@ -47,15 +47,17 @@ paths:
                     - height_cm
                   default: []
                 expected_scans:
-                  type: integer
-                  nullable: true
+                  type:
+                  - integer
+                  - 'null'
                   default: 0
                 output_uris:
                   type: object
                   properties:
                     measurements_csv:
-                      type: string
-                      nullable: true
+                      type:
+                      - string
+                      - 'null'
                     ply_files:
                       type: array
                       items:
@@ -69,10 +71,13 @@ paths:
                       items:
                         type: string
                 error:
-                  type: string
-                  nullable: true
+                  type:
+                  - string
+                  - 'null'
                 error_type:
-                  type: string
+                  type:
+                  - string
+                  - 'null'
                   enum:
                   - inference_oom
                   - inference_failed
@@ -80,7 +85,6 @@ paths:
                   - image_download_failed
                   - config_invalid
                   - upload_failed
-                  nullable: true
               required:
               - run_id
               - status
@@ -89,6 +93,10 @@ paths:
           description: Default Response
       tags:
       - Measurement
+      summary: Create measurement results
+      x-summary-source: derived
+      operationId: postV1MeasurementResults
+      x-operation-id-source: derived
 components:
   securitySchemes:
     bearerAuth:

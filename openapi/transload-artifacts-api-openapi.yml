@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Pipeline Backend Admin Artifacts API
+  title: Pipeline Backend Artifacts API
   version: 0.1.0
 security:
 - bearerAuth: []
@@ -29,6 +29,10 @@ paths:
           description: Default Response
       tags:
       - Artifacts
+      summary: Get artifacts local by result id by artifact kind
+      x-summary-source: derived
+      operationId: getV1ArtifactsLocalByResultIdByArtifactKind
+      x-operation-id-source: derived
 components:
   securitySchemes:
     bearerAuth:

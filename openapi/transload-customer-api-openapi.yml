@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Pipeline Backend Admin Customer API
+  title: Pipeline Backend Customer API
   version: 0.1.0
 security:
 - bearerAuth: []
@@ -25,6 +25,10 @@ paths:
           description: Default Response
       tags:
       - Customer
+      summary: Create customer auth request link
+      x-summary-source: derived
+      operationId: postV1CustomerAuthRequestLink
+      x-operation-id-source: derived
   /v1/customer/auth/verify:
     post:
       requestBody:
@@ -46,6 +50,10 @@ paths:
           description: Default Response
       tags:
       - Customer
+      summary: Create customer auth verify
+      x-summary-source: derived
+      operationId: postV1CustomerAuthVerify
+      x-operation-id-source: derived
   /v1/customer/auth/select-customer:
     post:
       requestBody:
@@ -65,6 +73,10 @@ paths:
           description: Default Response
       tags:
       - Customer
+      summary: Create customer auth select customer
+      x-summary-source: derived
+      operationId: postV1CustomerAuthSelectCustomer
+      x-operation-id-source: derived
   /v1/customer/auth/logout:
     post:
       responses:
@@ -72,6 +84,10 @@ paths:
           description: Default Response
       tags:
       - Customer
+      summary: Create customer auth logout
+      x-summary-source: derived
+      operationId: postV1CustomerAuthLogout
+      x-operation-id-source: derived
   /v1/customer/auth/session:
     get:
       responses:
@@ -79,6 +95,10 @@ paths:
           description: Default Response
       tags:
       - Customer
+      summary: Get customer auth session
+      x-summary-source: derived
+      operationId: getV1CustomerAuthSession
+      x-operation-id-source: derived
   /v1/customer/data/handling-units:
     get:
       responses:
@@ -86,6 +106,10 @@ paths:
           description: Default Response
       tags:
       - Customer
+      summary: Get customer data handling units
+      x-summary-source: derived
+      operationId: getV1CustomerDataHandlingUnits
+      x-operation-id-source: derived
   /v1/customer/data/handling-units/export:
     get:
       responses:
@@ -93,6 +117,10 @@ paths:
           description: Default Response
       tags:
       - Customer
+      summary: Get customer data handling units export
+      x-summary-source: derived
+      operationId: getV1CustomerDataHandlingUnitsExport
+      x-operation-id-source: derived
   /v1/customer/data/shipments/{shipmentId}:
     get:
       parameters:
@@ -106,6 +134,10 @@ paths:
           description: Default Response
       tags:
       - Customer
+      summary: Get customer data shipments by shipment id
+      x-summary-source: derived
+      operationId: getV1CustomerDataShipmentsByShipmentId
+      x-operation-id-source: derived
   /v1/customer/data/handling-units/{handlingUnitId}:
     get:
       parameters:
@@ -119,6 +151,10 @@ paths:
           description: Default Response
       tags:
       - Customer
+      summary: Get customer data handling units by handling unit id
+      x-summary-source: derived
+      operationId: getV1CustomerDataHandlingUnitsByHandlingUnitId
+      x-operation-id-source: derived
     delete:
       parameters:
       - schema:
@@ -131,6 +167,10 @@ paths:
           description: Default Response
       tags:
       - Customer
+      summary: Delete customer data handling units by handling unit id
+      x-summary-source: derived
+      operationId: deleteV1CustomerDataHandlingUnitsByHandlingUnitId
+      x-operation-id-source: derived
 components:
   securitySchemes:
     bearerAuth:

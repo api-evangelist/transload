@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Pipeline Backend Admin Qa Classification API
+  title: Pipeline Backend Qa Classification API
   version: 0.1.0
 security:
 - bearerAuth: []
@@ -88,6 +88,10 @@ paths:
           description: Default Response
       tags:
       - Qa Classification
+      summary: Get qa classification pending
+      x-summary-source: derived
+      operationId: getV1QaClassificationPending
+      x-operation-id-source: derived
   /v1/qa-classification/summary:
     get:
       parameters:
@@ -138,6 +142,10 @@ paths:
           description: Default Response
       tags:
       - Qa Classification
+      summary: Get qa classification summary
+      x-summary-source: derived
+      operationId: getV1QaClassificationSummary
+      x-operation-id-source: derived
   /v1/qa-classification/{scanId}/review:
     post:
       requestBody:
@@ -222,6 +230,10 @@ paths:
           description: Default Response
       tags:
       - Qa Classification
+      summary: Create qa classification by scan id review
+      x-summary-source: derived
+      operationId: postV1QaClassificationByScanIdReview
+      x-operation-id-source: derived
   /v1/qa-classification/{scanId}/review/reset:
     post:
       requestBody:
@@ -248,6 +260,10 @@ paths:
           description: Default Response
       tags:
       - Qa Classification
+      summary: Create qa classification by scan id review reset
+      x-summary-source: derived
+      operationId: postV1QaClassificationByScanIdReviewReset
+      x-operation-id-source: derived
   /v1/qa-classification/reviews/reset:
     post:
       requestBody:
@@ -278,6 +294,10 @@ paths:
           description: Default Response
       tags:
       - Qa Classification
+      summary: Create qa classification reviews reset
+      x-summary-source: derived
+      operationId: postV1QaClassificationReviewsReset
+      x-operation-id-source: derived
   /v1/qa-classification/stats:
     get:
       parameters:
@@ -304,6 +324,10 @@ paths:
           description: Default Response
       tags:
       - Qa Classification
+      summary: Get qa classification stats
+      x-summary-source: derived
+      operationId: getV1QaClassificationStats
+      x-operation-id-source: derived
 components:
   securitySchemes:
     bearerAuth:

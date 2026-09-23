@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Pipeline Backend Admin Exports API
+  title: Pipeline Backend Exports API
   version: 0.1.0
 security:
 - bearerAuth: []
@@ -41,6 +41,10 @@ paths:
           description: Default Response
       tags:
       - Exports
+      summary: Get exports measurements
+      x-summary-source: derived
+      operationId: getV1ExportsMeasurements
+      x-operation-id-source: derived
 components:
   securitySchemes:
     bearerAuth:

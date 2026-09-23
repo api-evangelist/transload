@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: Pipeline Backend Admin API
   version: 0.1.0
@@ -21,6 +21,10 @@ paths:
           description: Default Response
       tags:
       - Admin
+      summary: Get admin overview
+      x-summary-source: derived
+      operationId: getV1AdminOverview
+      x-operation-id-source: derived
   /v1/admin/pipeline/gates:
     get:
       responses:
@@ -28,6 +32,10 @@ paths:
           description: Default Response
       tags:
       - Admin
+      summary: Get admin pipeline gates
+      x-summary-source: derived
+      operationId: getV1AdminPipelineGates
+      x-operation-id-source: derived
   /v1/admin/pipeline/pause:
     post:
       requestBody:
@@ -52,6 +60,10 @@ paths:
           description: Default Response
       tags:
       - Admin
+      summary: Create admin pipeline pause
+      x-summary-source: derived
+      operationId: postV1AdminPipelinePause
+      x-operation-id-source: derived
   /v1/admin/pipeline/resume:
     post:
       requestBody:
@@ -74,6 +86,10 @@ paths:
           description: Default Response
       tags:
       - Admin
+      summary: Create admin pipeline resume
+      x-summary-source: derived
+      operationId: postV1AdminPipelineResume
+      x-operation-id-source: derived
   /v1/admin/pipeline/customer-gates:
     get:
       responses:
@@ -81,6 +97,10 @@ paths:
           description: Default Response
       tags:
       - Admin
+      summary: Get admin pipeline customer gates
+      x-summary-source: derived
+      operationId: getV1AdminPipelineCustomerGates
+      x-operation-id-source: derived
   /v1/admin/pipeline/effective-gates:
     get:
       parameters:
@@ -95,6 +115,10 @@ paths:
           description: Default Response
       tags:
       - Admin
+      summary: Get admin pipeline effective gates
+      x-summary-source: derived
+      operationId: getV1AdminPipelineEffectiveGates
+      x-operation-id-source: derived
   /v1/admin/pipeline/customer-pause:
     post:
       requestBody:
@@ -123,6 +147,10 @@ paths:
           description: Default Response
       tags:
       - Admin
+      summary: Create admin pipeline customer pause
+      x-summary-source: derived
+      operationId: postV1AdminPipelineCustomerPause
+      x-operation-id-source: derived
   /v1/admin/pipeline/customer-resume:
     post:
       requestBody:
@@ -149,6 +177,10 @@ paths:
           description: Default Response
       tags:
       - Admin
+      summary: Create admin pipeline customer resume
+      x-summary-source: derived
+      operationId: postV1AdminPipelineCustomerResume
+      x-operation-id-source: derived
   /v1/admin/pipeline/customer-reset:
     post:
       requestBody:
@@ -178,6 +210,10 @@ paths:
           description: Default Response
       tags:
       - Admin
+      summary: Create admin pipeline customer reset
+      x-summary-source: derived
+      operationId: postV1AdminPipelineCustomerReset
+      x-operation-id-source: derived
   /admin:
     get:
       responses:
@@ -185,6 +221,10 @@ paths:
           description: Default Response
       tags:
       - Admin
+      summary: Get admin
+      x-summary-source: derived
+      operationId: getAdmin
+      x-operation-id-source: derived
   /admin/resources/{resourceId}:
     get:
       parameters:
@@ -198,6 +238,10 @@ paths:
           description: Default Response
       tags:
       - Admin
+      summary: Get admin resources by resource id
+      x-summary-source: derived
+      operationId: getAdminResourcesByResourceId
+      x-operation-id-source: derived
   /admin/api/resources/{resourceId}/search/{query}:
     get:
       parameters:
@@ -216,6 +260,10 @@ paths:
           description: Default Response
       tags:
       - Admin
+      summary: Get admin api resources by resource id search by query
+      x-summary-source: derived
+      operationId: getAdminApiResourcesByResourceIdSearchByQuery
+      x-operation-id-source: derived
   /admin/resources/{resourceId}/actions/{action}:
     get:
       parameters:
@@ -234,6 +282,10 @@ paths:
           description: Default Response
       tags:
       - Admin
+      summary: Get admin resources by resource id actions by action
+      x-summary-source: derived
+      operationId: getAdminResourcesByResourceIdActionsByAction
+      x-operation-id-source: derived
   /admin/api/resources/{resourceId}/actions/{action}:
     get:
       parameters:
@@ -252,6 +304,10 @@ paths:
           description: Default Response
       tags:
       - Admin
+      summary: Get admin api resources by resource id actions by action
+      x-summary-source: derived
+      operationId: getAdminApiResourcesByResourceIdActionsByAction
+      x-operation-id-source: derived
     post:
       parameters:
       - schema:
@@ -269,6 +325,10 @@ paths:
           description: Default Response
       tags:
       - Admin
+      summary: Create admin api resources by resource id actions by action
+      x-summary-source: derived
+      operationId: postAdminApiResourcesByResourceIdActionsByAction
+      x-operation-id-source: derived
   /admin/api/resources/{resourceId}/actions/{action}/{query}:
     get:
       parameters:
@@ -292,6 +352,10 @@ paths:
           description: Default Response
       tags:
       - Admin
+      summary: Get admin api resources by resource id actions by action by query
+      x-summary-source: derived
+      operationId: getAdminApiResourcesByResourceIdActionsByActionByQuery
+      x-operation-id-source: derived
   /admin/resources/{resourceId}/records/{recordId}/{action}:
     get:
       parameters:
@@ -315,6 +379,10 @@ paths:
           description: Default Response
       tags:
       - Admin
+      summary: Get admin resources by resource id records by record id by action
+      x-summary-source: derived
+      operationId: getAdminResourcesByResourceIdRecordsByRecordIdByAction
+      x-operation-id-source: derived
   /admin/api/resources/{resourceId}/records/{recordId}/{action}:
     get:
       parameters:
@@ -338,6 +406,10 @@ paths:
           description: Default Response
       tags:
       - Admin
+      summary: Get admin api resources by resource id records by record id by action
+      x-summary-source: derived
+      operationId: getAdminApiResourcesByResourceIdRecordsByRecordIdByAction
+      x-operation-id-source: derived
     post:
       parameters:
       - schema:
@@ -360,6 +432,10 @@ paths:
           description: Default Response
       tags:
       - Admin
+      summary: Create admin api resources by resource id records by record id by action
+      x-summary-source: derived
+      operationId: postAdminApiResourcesByResourceIdRecordsByRecordIdByAction
+      x-operation-id-source: derived
   /admin/resources/{resourceId}/bulk/{action}:
     get:
       parameters:
@@ -378,6 +454,10 @@ paths:
           description: Default Response
       tags:
       - Admin
+      summary: Get admin resources by resource id bulk by action
+      x-summary-source: derived
+      operationId: getAdminResourcesByResourceIdBulkByAction
+      x-operation-id-source: derived
   /admin/api/resources/{resourceId}/bulk/{action}:
     get:
       parameters:
@@ -396,6 +476,10 @@ paths:
           description: Default Response
       tags:
       - Admin
+      summary: Get admin api resources by resource id bulk by action
+      x-summary-source: derived
+      operationId: getAdminApiResourcesByResourceIdBulkByAction
+      x-operation-id-source: derived
     post:
       parameters:
       - schema:
@@ -413,6 +497,10 @@ paths:
           description: Default Response
       tags:
       - Admin
+      summary: Create admin api resources by resource id bulk by action
+      x-summary-source: derived
+      operationId: postAdminApiResourcesByResourceIdBulkByAction
+      x-operation-id-source: derived
   /admin/api/resources/{resourceId}/search:
     get:
       parameters:
@@ -426,6 +514,10 @@ paths:
           description: Default Response
       tags:
       - Admin
+      summary: Get admin api resources by resource id search
+      x-summary-source: derived
+      operationId: getAdminApiResourcesByResourceIdSearch
+      x-operation-id-source: derived
   /admin/api/dashboard:
     get:
       responses:
@@ -433,6 +525,10 @@ paths:
           description: Default Response
       tags:
       - Admin
+      summary: Get admin api dashboard
+      x-summary-source: derived
+      operationId: getAdminApiDashboard
+      x-operation-id-source: derived
   /admin/pages/{pageName}:
     get:
       parameters:
@@ -446,6 +542,10 @@ paths:
           description: Default Response
       tags:
       - Admin
+      summary: Get admin pages by page name
+      x-summary-source: derived
+      operationId: getAdminPagesByPageName
+      x-operation-id-source: derived
   /admin/api/pages/{pageName}:
     get:
       parameters:
@@ -459,6 +559,10 @@ paths:
           description: Default Response
       tags:
       - Admin
+      summary: Get admin api pages by page name
+      x-summary-source: derived
+      operationId: getAdminApiPagesByPageName
+      x-operation-id-source: derived
     post:
       parameters:
       - schema:
@@ -471,6 +575,10 @@ paths:
           description: Default Response
       tags:
       - Admin
+      summary: Create admin api pages by page name
+      x-summary-source: derived
+      operationId: postAdminApiPagesByPageName
+      x-operation-id-source: derived
   /admin/frontend/assets/icomoon.css:
     get:
       responses:
@@ -478,6 +586,10 @@ paths:
           description: Default Response
       tags:
       - Admin
+      summary: Get admin frontend assets icomoon css
+      x-summary-source: derived
+      operationId: getAdminFrontendAssetsIcomoonCss
+      x-operation-id-source: derived
   /admin/frontend/assets/icomoon.eot:
     get:
       responses:
@@ -485,6 +597,10 @@ paths:
           description: Default Response
       tags:
       - Admin
+      summary: Get admin frontend assets icomoon eot
+      x-summary-source: derived
+      operationId: getAdminFrontendAssetsIcomoonEot
+      x-operation-id-source: derived
   /admin/frontend/assets/icomoon.svg:
     get:
       responses:
@@ -492,6 +608,10 @@ paths:
           description: Default Response
       tags:
       - Admin
+      summary: Get admin frontend assets icomoon svg
+      x-summary-source: derived
+      operationId: getAdminFrontendAssetsIcomoonSvg
+      x-operation-id-source: derived
   /admin/frontend/assets/icomoon.ttf:
     get:
       responses:
@@ -499,6 +619,10 @@ paths:
           description: Default Response
       tags:
       - Admin
+      summary: Get admin frontend assets icomoon ttf
+      x-summary-source: derived
+      operationId: getAdminFrontendAssetsIcomoonTtf
+      x-operation-id-source: derived
   /admin/frontend/assets/icomoon.woff:
     get:
       responses:
@@ -506,6 +630,10 @@ paths:
           description: Default Response
       tags:
       - Admin
+      summary: Get admin frontend assets icomoon woff
+      x-summary-source: derived
+      operationId: getAdminFrontendAssetsIcomoonWoff
+      x-operation-id-source: derived
   /admin/frontend/assets/app.bundle.js:
     get:
       responses:
@@ -513,6 +641,10 @@ paths:
           description: Default Response
       tags:
       - Admin
+      summary: Get admin frontend assets app bundle js
+      x-summary-source: derived
+      operationId: getAdminFrontendAssetsAppBundleJs
+      x-operation-id-source: derived
   /admin/frontend/assets/global.bundle.js:
     get:
       responses:
@@ -520,6 +652,10 @@ paths:
           description: Default Response
       tags:
       - Admin
+      summary: Get admin frontend assets global bundle js
+      x-summary-source: derived
+      operationId: getAdminFrontendAssetsGlobalBundleJs
+      x-operation-id-source: derived
   /admin/frontend/assets/design-system.bundle.js:
     get:
       responses:
@@ -527,6 +663,10 @@ paths:
           description: Default Response
       tags:
       - Admin
+      summary: Get admin frontend assets design system bundle js
+      x-summary-source: derived
+      operationId: getAdminFrontendAssetsDesignSystemBundleJs
+      x-operation-id-source: derived
   /admin/frontend/assets/logo.svg:
     get:
       responses:
@@ -534,6 +674,10 @@ paths:
           description: Default Response
       tags:
       - Admin
+      summary: Get admin frontend assets logo svg
+      x-summary-source: derived
+      operationId: getAdminFrontendAssetsLogoSvg
+      x-operation-id-source: derived
   /admin/frontend/assets/logo-mini.svg:
     get:
       responses:
@@ -541,6 +685,10 @@ paths:
           description: Default Response
       tags:
       - Admin
+      summary: Get admin frontend assets logo mini svg
+      x-summary-source: derived
+      operationId: getAdminFrontendAssetsLogoMiniSvg
+      x-operation-id-source: derived
   /admin/frontend/assets/components.bundle.js:
     get:
       responses:
@@ -548,6 +696,10 @@ paths:
           description: Default Response
       tags:
       - Admin
+      summary: Get admin frontend assets components bundle js
+      x-summary-source: derived
+      operationId: getAdminFrontendAssetsComponentsBundleJs
+      x-operation-id-source: derived
   /admin/login:
     get:
       responses:
@@ -555,12 +707,20 @@ paths:
           description: Default Response
       tags:
       - Admin
+      summary: Get admin login
+      x-summary-source: derived
+      operationId: getAdminLogin
+      x-operation-id-source: derived
     post:
       responses:
         '200':
           description: Default Response
       tags:
       - Admin
+      summary: Create admin login
+      x-summary-source: derived
+      operationId: postAdminLogin
+      x-operation-id-source: derived
   /admin/logout:
     get:
       responses:
@@ -568,6 +728,10 @@ paths:
           description: Default Response
       tags:
       - Admin
+      summary: Get admin logout
+      x-summary-source: derived
+      operationId: getAdminLogout
+      x-operation-id-source: derived
 components:
   securitySchemes:
     bearerAuth:

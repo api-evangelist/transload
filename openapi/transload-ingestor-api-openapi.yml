@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Pipeline Backend Admin Ingestor API
+  title: Pipeline Backend Ingestor API
   version: 0.1.0
 security:
 - bearerAuth: []
@@ -27,6 +27,10 @@ paths:
           description: Default Response
       tags:
       - Ingestor
+      summary: Get ingestor bootstrap
+      x-summary-source: derived
+      operationId: getV1IngestorBootstrap
+      x-operation-id-source: derived
   /v1/ingestor/captures:
     post:
       requestBody:
@@ -102,6 +106,10 @@ paths:
           description: Default Response
       tags:
       - Ingestor
+      summary: Create ingestor captures
+      x-summary-source: derived
+      operationId: postV1IngestorCaptures
+      x-operation-id-source: derived
   /v1/ingestor/captures/{id}/upload-complete:
     patch:
       requestBody:
@@ -132,6 +140,10 @@ paths:
           description: Default Response
       tags:
       - Ingestor
+      summary: Update ingestor captures by id upload complete
+      x-summary-source: derived
+      operationId: patchV1IngestorCapturesByIdUploadComplete
+      x-operation-id-source: derived
   /v1/ingestor/scans:
     post:
       requestBody:
@@ -214,6 +226,10 @@ paths:
           description: Default Response
       tags:
       - Ingestor
+      summary: Create ingestor scans
+      x-summary-source: derived
+      operationId: postV1IngestorScans
+      x-operation-id-source: derived
 components:
   securitySchemes:
     bearerAuth:

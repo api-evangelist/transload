@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Pipeline Backend Admin Ai Results API
+  title: Pipeline Backend Ai Results API
   version: 0.1.0
 security:
 - bearerAuth: []
@@ -45,6 +45,10 @@ paths:
           description: Default Response
       tags:
       - Ai Results
+      summary: Get ai results
+      x-summary-source: derived
+      operationId: getV1AiResults
+      x-operation-id-source: derived
   /v1/ai-results/{resultId}:
     get:
       parameters:
@@ -59,6 +63,10 @@ paths:
           description: Default Response
       tags:
       - Ai Results
+      summary: Get ai results by result id
+      x-summary-source: derived
+      operationId: getV1AiResultsByResultId
+      x-operation-id-source: derived
   /v1/ai-results/{resultId}/artifacts/{artifactKind}/url:
     post:
       parameters:
@@ -81,6 +89,10 @@ paths:
           description: Default Response
       tags:
       - Ai Results
+      summary: Create ai results by result id artifacts by artifact kind url
+      x-summary-source: derived
+      operationId: postV1AiResultsByResultIdArtifactsByArtifactKindUrl
+      x-operation-id-source: derived
 components:
   securitySchemes:
     bearerAuth:

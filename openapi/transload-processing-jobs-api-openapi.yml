@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Pipeline Backend Admin Processing Jobs API
+  title: Pipeline Backend Processing Jobs API
   version: 0.1.0
 security:
 - bearerAuth: []
@@ -61,6 +61,10 @@ paths:
           description: Default Response
       tags:
       - Processing Jobs
+      summary: Create processing jobs
+      x-summary-source: derived
+      operationId: postV1ProcessingJobs
+      x-operation-id-source: derived
     get:
       parameters:
       - schema:
@@ -90,6 +94,10 @@ paths:
           description: Default Response
       tags:
       - Processing Jobs
+      summary: Get processing jobs
+      x-summary-source: derived
+      operationId: getV1ProcessingJobs
+      x-operation-id-source: derived
   /v1/processing-jobs/{jobId}:
     get:
       parameters:
@@ -104,6 +112,10 @@ paths:
           description: Default Response
       tags:
       - Processing Jobs
+      summary: Get processing jobs by job id
+      x-summary-source: derived
+      operationId: getV1ProcessingJobsByJobId
+      x-operation-id-source: derived
 components:
   securitySchemes:
     bearerAuth:

@@ -1,11 +1,11 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Pipeline Backend Admin Qa API
+  title: Pipeline Backend Qa API
   version: 0.1.0
 security:
 - bearerAuth: []
 tags:
-- name: Qa
+- name: QA
 paths:
   /v1/qa/koch-reference-sync/request:
     post:
@@ -13,14 +13,22 @@ paths:
         '200':
           description: Default Response
       tags:
-      - Qa
+      - QA
+      summary: Create qa koch reference sync request
+      x-summary-source: derived
+      operationId: postV1QaKochReferenceSyncRequest
+      x-operation-id-source: derived
   /v1/qa/leaderboard:
     get:
       responses:
         '200':
           description: Default Response
       tags:
-      - Qa
+      - QA
+      summary: Get qa leaderboard
+      x-summary-source: derived
+      operationId: getV1QaLeaderboard
+      x-operation-id-source: derived
   /v1/qa/leaderboard/daily:
     get:
       parameters:
@@ -40,7 +48,11 @@ paths:
         '200':
           description: Default Response
       tags:
-      - Qa
+      - QA
+      summary: Get qa leaderboard daily
+      x-summary-source: derived
+      operationId: getV1QaLeaderboardDaily
+      x-operation-id-source: derived
   /v1/qa/summary:
     get:
       parameters:
@@ -90,7 +102,11 @@ paths:
         '200':
           description: Default Response
       tags:
-      - Qa
+      - QA
+      summary: Get qa summary
+      x-summary-source: derived
+      operationId: getV1QaSummary
+      x-operation-id-source: derived
   /v1/qa/{scanId}/review:
     post:
       requestBody:
@@ -174,7 +190,11 @@ paths:
         '200':
           description: Default Response
       tags:
-      - Qa
+      - QA
+      summary: Create qa by scan id review
+      x-summary-source: derived
+      operationId: postV1QaByScanIdReview
+      x-operation-id-source: derived
   /v1/qa/{scanId}/review/reset:
     post:
       requestBody:
@@ -200,7 +220,11 @@ paths:
         '200':
           description: Default Response
       tags:
-      - Qa
+      - QA
+      summary: Create qa by scan id review reset
+      x-summary-source: derived
+      operationId: postV1QaByScanIdReviewReset
+      x-operation-id-source: derived
   /v1/qa/reviews/reset:
     post:
       requestBody:
@@ -230,7 +254,11 @@ paths:
         '200':
           description: Default Response
       tags:
-      - Qa
+      - QA
+      summary: Create qa reviews reset
+      x-summary-source: derived
+      operationId: postV1QaReviewsReset
+      x-operation-id-source: derived
   /v1/qa/stats:
     get:
       parameters:
@@ -256,7 +284,11 @@ paths:
         '200':
           description: Default Response
       tags:
-      - Qa
+      - QA
+      summary: Get qa stats
+      x-summary-source: derived
+      operationId: getV1QaStats
+      x-operation-id-source: derived
   /v1/qa/pending:
     get:
       parameters:
@@ -369,7 +401,11 @@ paths:
         '200':
           description: Default Response
       tags:
-      - Qa
+      - QA
+      summary: Get qa pending
+      x-summary-source: derived
+      operationId: getV1QaPending
+      x-operation-id-source: derived
   /v1/qa/{scanId}/frames:
     get:
       parameters:
@@ -383,7 +419,11 @@ paths:
         '200':
           description: Default Response
       tags:
-      - Qa
+      - QA
+      summary: Get qa by scan id frames
+      x-summary-source: derived
+      operationId: getV1QaByScanIdFrames
+      x-operation-id-source: derived
   /v1/qa/{scanId}/overlay:
     get:
       parameters:
@@ -407,7 +447,11 @@ paths:
         '200':
           description: Default Response
       tags:
-      - Qa
+      - QA
+      summary: Get qa by scan id overlay
+      x-summary-source: derived
+      operationId: getV1QaByScanIdOverlay
+      x-operation-id-source: derived
   /v1/qa/camera-views:
     get:
       parameters:
@@ -430,7 +474,11 @@ paths:
         '200':
           description: Default Response
       tags:
-      - Qa
+      - QA
+      summary: Get qa camera views
+      x-summary-source: derived
+      operationId: getV1QaCameraViews
+      x-operation-id-source: derived
   /v1/qa/koch-auto-review-by-filter:
     post:
       requestBody:
@@ -460,7 +508,11 @@ paths:
         '200':
           description: Default Response
       tags:
-      - Qa
+      - QA
+      summary: Create qa koch auto review by filter
+      x-summary-source: derived
+      operationId: postV1QaKochAutoReviewByFilter
+      x-operation-id-source: derived
   /v1/qa/koch-auto-scale:
     post:
       requestBody:
@@ -482,7 +534,11 @@ paths:
         '200':
           description: Default Response
       tags:
-      - Qa
+      - QA
+      summary: Create qa koch auto scale
+      x-summary-source: derived
+      operationId: postV1QaKochAutoScale
+      x-operation-id-source: derived
   /v1/qa/auth/request-link:
     post:
       requestBody:
@@ -500,7 +556,11 @@ paths:
         '200':
           description: Default Response
       tags:
-      - Qa
+      - QA
+      summary: Create qa auth request link
+      x-summary-source: derived
+      operationId: postV1QaAuthRequestLink
+      x-operation-id-source: derived
   /v1/qa/auth/verify:
     post:
       requestBody:
@@ -519,21 +579,33 @@ paths:
         '200':
           description: Default Response
       tags:
-      - Qa
+      - QA
+      summary: Create qa auth verify
+      x-summary-source: derived
+      operationId: postV1QaAuthVerify
+      x-operation-id-source: derived
   /v1/qa/auth/logout:
     post:
       responses:
         '200':
           description: Default Response
       tags:
-      - Qa
+      - QA
+      summary: Create qa auth logout
+      x-summary-source: derived
+      operationId: postV1QaAuthLogout
+      x-operation-id-source: derived
   /v1/qa/auth/session:
     get:
       responses:
         '200':
           description: Default Response
       tags:
-      - Qa
+      - QA
+      summary: Get qa auth session
+      x-summary-source: derived
+      operationId: getV1QaAuthSession
+      x-operation-id-source: derived
 components:
   securitySchemes:
     bearerAuth:

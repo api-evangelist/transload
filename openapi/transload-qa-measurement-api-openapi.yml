@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Pipeline Backend Admin Qa Measurement API
+  title: Pipeline Backend Qa Measurement API
   version: 0.1.0
 security:
 - bearerAuth: []
@@ -120,6 +120,10 @@ paths:
           description: Default Response
       tags:
       - Qa Measurement
+      summary: Get qa measurement pending
+      x-summary-source: derived
+      operationId: getV1QaMeasurementPending
+      x-operation-id-source: derived
   /v1/qa-measurement/summary:
     get:
       responses:
@@ -127,6 +131,10 @@ paths:
           description: Default Response
       tags:
       - Qa Measurement
+      summary: Get qa measurement summary
+      x-summary-source: derived
+      operationId: getV1QaMeasurementSummary
+      x-operation-id-source: derived
   /v1/qa-measurement/{scanId}/frames:
     get:
       parameters:
@@ -141,6 +149,10 @@ paths:
           description: Default Response
       tags:
       - Qa Measurement
+      summary: Get qa measurement by scan id frames
+      x-summary-source: derived
+      operationId: getV1QaMeasurementByScanIdFrames
+      x-operation-id-source: derived
   /v1/qa-measurement/{scanId}/review:
     post:
       requestBody:
@@ -182,6 +194,10 @@ paths:
           description: Default Response
       tags:
       - Qa Measurement
+      summary: Create qa measurement by scan id review
+      x-summary-source: derived
+      operationId: postV1QaMeasurementByScanIdReview
+      x-operation-id-source: derived
   /v1/qa-measurement/{scanId}/review/reset:
     post:
       requestBody:
@@ -208,6 +224,10 @@ paths:
           description: Default Response
       tags:
       - Qa Measurement
+      summary: Create qa measurement by scan id review reset
+      x-summary-source: derived
+      operationId: postV1QaMeasurementByScanIdReviewReset
+      x-operation-id-source: derived
   /v1/qa-measurement/reviews/reset:
     post:
       requestBody:
@@ -238,6 +258,10 @@ paths:
           description: Default Response
       tags:
       - Qa Measurement
+      summary: Create qa measurement reviews reset
+      x-summary-source: derived
+      operationId: postV1QaMeasurementReviewsReset
+      x-operation-id-source: derived
   /v1/qa-measurement/bulk-review:
     post:
       requestBody:
@@ -277,6 +301,10 @@ paths:
           description: Default Response
       tags:
       - Qa Measurement
+      summary: Create qa measurement bulk review
+      x-summary-source: derived
+      operationId: postV1QaMeasurementBulkReview
+      x-operation-id-source: derived
   /v1/qa-measurement/stats:
     get:
       parameters:
@@ -347,6 +375,10 @@ paths:
           description: Default Response
       tags:
       - Qa Measurement
+      summary: Get qa measurement stats
+      x-summary-source: derived
+      operationId: getV1QaMeasurementStats
+      x-operation-id-source: derived
   /v1/qa-measurement/{scanId}/overlay:
     get:
       parameters:
@@ -371,6 +403,10 @@ paths:
           description: Default Response
       tags:
       - Qa Measurement
+      summary: Get qa measurement by scan id overlay
+      x-summary-source: derived
+      operationId: getV1QaMeasurementByScanIdOverlay
+      x-operation-id-source: derived
 components:
   securitySchemes:
     bearerAuth:

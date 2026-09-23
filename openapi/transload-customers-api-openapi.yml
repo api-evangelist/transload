@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Pipeline Backend Admin Customers API
+  title: Pipeline Backend Customers API
   version: 0.1.0
 security:
 - bearerAuth: []
@@ -49,12 +49,20 @@ paths:
           description: Default Response
       tags:
       - Customers
+      summary: Create customers
+      x-summary-source: derived
+      operationId: postV1Customers
+      x-operation-id-source: derived
     get:
       responses:
         '200':
           description: Default Response
       tags:
       - Customers
+      summary: Get customers
+      x-summary-source: derived
+      operationId: getV1Customers
+      x-operation-id-source: derived
   /v1/customers/{customerId}:
     get:
       parameters:
@@ -69,6 +77,10 @@ paths:
           description: Default Response
       tags:
       - Customers
+      summary: Get customers by customer id
+      x-summary-source: derived
+      operationId: getV1CustomersByCustomerId
+      x-operation-id-source: derived
     patch:
       requestBody:
         required: true
@@ -89,25 +101,29 @@ paths:
                   - active
                   - disabled
                 storageProvider:
-                  type: string
+                  type:
+                  - string
+                  - 'null'
                   enum:
                   - azure_blob
                   - gcs
                   - localfs
-                  nullable: true
                 storageAccount:
-                  type: string
+                  type:
+                  - string
+                  - 'null'
                   minLength: 1
-                  nullable: true
                 storageContainer:
-                  type: string
+                  type:
+                  - string
+                  - 'null'
                   minLength: 1
-                  nullable: true
                 logoUrl:
-                  type: string
+                  type:
+                  - string
+                  - 'null'
                   format: uri
                   minLength: 1
-                  nullable: true
                 metadata:
                   type: object
                   additionalProperties: {}
@@ -123,6 +139,10 @@ paths:
           description: Default Response
       tags:
       - Customers
+      summary: Update customers by customer id
+      x-summary-source: derived
+      operationId: patchV1CustomersByCustomerId
+      x-operation-id-source: derived
     delete:
       parameters:
       - schema:
@@ -136,6 +156,10 @@ paths:
           description: Default Response
       tags:
       - Customers
+      summary: Delete customers by customer id
+      x-summary-source: derived
+      operationId: deleteV1CustomersByCustomerId
+      x-operation-id-source: derived
 components:
   securitySchemes:
     bearerAuth:

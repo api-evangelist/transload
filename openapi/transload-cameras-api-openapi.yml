@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Pipeline Backend Admin Cameras API
+  title: Pipeline Backend Cameras API
   version: 0.1.0
 security:
 - bearerAuth: []
@@ -47,7 +47,9 @@ paths:
                   type: object
                   additionalProperties: {}
                 intrinsics:
-                  type: object
+                  type:
+                  - object
+                  - 'null'
                   properties:
                     fx:
                       type: number
@@ -83,9 +85,10 @@ paths:
                   - cy
                   - imageWidth
                   - imageHeight
-                  nullable: true
                 intrinsicsUndistorted:
-                  type: object
+                  type:
+                  - object
+                  - 'null'
                   properties:
                     fx:
                       type: number
@@ -106,22 +109,23 @@ paths:
                   - cy
                   - width
                   - height
-                  nullable: true
                 extrinsics:
-                  type: object
+                  type:
+                  - object
+                  - 'null'
                   properties:
                     rvec: {}
                     tvec: {}
                   required:
                   - rvec
                   - tvec
-                  nullable: true
                 measurementConfig:
-                  type: object
+                  type:
+                  - object
+                  - 'null'
                   additionalProperties:
                     type: object
                     additionalProperties: {}
-                  nullable: true
                 config:
                   type: object
                   properties:
@@ -129,49 +133,58 @@ paths:
                       type: string
                       minLength: 1
                     username:
-                      type: string
-                      nullable: true
+                      type:
+                      - string
+                      - 'null'
                     password:
-                      type: string
-                      nullable: true
+                      type:
+                      - string
+                      - 'null'
                     bufferSeconds:
-                      type: number
-                      nullable: true
+                      type:
+                      - number
+                      - 'null'
                     httpPollIntervalSeconds:
-                      type: number
-                      nullable: true
+                      type:
+                      - number
+                      - 'null'
                     networkOffsetMs:
                       oneOf:
                       - type: integer
                       - enum:
                         - auto
-                      nullable: true
                     zones:
-                      type: array
+                      type:
+                      - array
+                      - 'null'
                       items:
                         type: string
                         minLength: 1
-                      nullable: true
                     rtspTimestampSource:
-                      type: string
+                      type:
+                      - string
+                      - 'null'
                       enum:
                       - wall_clock
                       - rtcp_ntp
                       - camera_metadata
-                      nullable: true
                     encodingOffsetMs:
-                      type: integer
-                      nullable: true
+                      type:
+                      - integer
+                      - 'null'
                     cameraMetadataUrl:
-                      type: string
-                      nullable: true
+                      type:
+                      - string
+                      - 'null'
                     onvifDeviceServiceUrl:
-                      type: string
-                      nullable: true
+                      type:
+                      - string
+                      - 'null'
                     scanArea:
-                      type: object
+                      type:
+                      - object
+                      - 'null'
                       additionalProperties: {}
-                      nullable: true
                   required:
                   - url
               required:
@@ -184,6 +197,10 @@ paths:
           description: Default Response
       tags:
       - Cameras
+      summary: Create cameras
+      x-summary-source: derived
+      operationId: postV1Cameras
+      x-operation-id-source: derived
     get:
       parameters:
       - schema:
@@ -203,6 +220,10 @@ paths:
           description: Default Response
       tags:
       - Cameras
+      summary: Get cameras
+      x-summary-source: derived
+      operationId: getV1Cameras
+      x-operation-id-source: derived
   /v1/cameras/{cameraId}:
     get:
       parameters:
@@ -217,6 +238,10 @@ paths:
           description: Default Response
       tags:
       - Cameras
+      summary: Get cameras by camera id
+      x-summary-source: derived
+      operationId: getV1CamerasByCameraId
+      x-operation-id-source: derived
     patch:
       requestBody:
         required: true
@@ -245,16 +270,19 @@ paths:
                 model:
                   type: string
                 zones:
-                  type: array
+                  type:
+                  - array
+                  - 'null'
                   items:
                     type: string
                     minLength: 1
-                  nullable: true
                 metadata:
                   type: object
                   additionalProperties: {}
                 intrinsics:
-                  type: object
+                  type:
+                  - object
+                  - 'null'
                   properties:
                     fx:
                       type: number
@@ -290,9 +318,10 @@ paths:
                   - cy
                   - imageWidth
                   - imageHeight
-                  nullable: true
                 intrinsicsUndistorted:
-                  type: object
+                  type:
+                  - object
+                  - 'null'
                   properties:
                     fx:
                       type: number
@@ -313,73 +342,84 @@ paths:
                   - cy
                   - width
                   - height
-                  nullable: true
                 extrinsics:
-                  type: object
+                  type:
+                  - object
+                  - 'null'
                   properties:
                     rvec: {}
                     tvec: {}
                   required:
                   - rvec
                   - tvec
-                  nullable: true
                 measurementConfig:
-                  type: object
+                  type:
+                  - object
+                  - 'null'
                   additionalProperties:
                     type: object
                     additionalProperties: {}
-                  nullable: true
                 config:
-                  type: object
+                  type:
+                  - object
+                  - 'null'
                   properties:
                     url:
                       type: string
                       minLength: 1
                     username:
-                      type: string
-                      nullable: true
+                      type:
+                      - string
+                      - 'null'
                     password:
-                      type: string
-                      nullable: true
+                      type:
+                      - string
+                      - 'null'
                     bufferSeconds:
-                      type: number
-                      nullable: true
+                      type:
+                      - number
+                      - 'null'
                     httpPollIntervalSeconds:
-                      type: number
-                      nullable: true
+                      type:
+                      - number
+                      - 'null'
                     networkOffsetMs:
                       oneOf:
                       - type: integer
                       - enum:
                         - auto
-                      nullable: true
                     zones:
-                      type: array
+                      type:
+                      - array
+                      - 'null'
                       items:
                         type: string
                         minLength: 1
-                      nullable: true
                     rtspTimestampSource:
-                      type: string
+                      type:
+                      - string
+                      - 'null'
                       enum:
                       - wall_clock
                       - rtcp_ntp
                       - camera_metadata
-                      nullable: true
                     encodingOffsetMs:
-                      type: integer
-                      nullable: true
+                      type:
+                      - integer
+                      - 'null'
                     cameraMetadataUrl:
-                      type: string
-                      nullable: true
+                      type:
+                      - string
+                      - 'null'
                     onvifDeviceServiceUrl:
-                      type: string
-                      nullable: true
+                      type:
+                      - string
+                      - 'null'
                     scanArea:
-                      type: object
+                      type:
+                      - object
+                      - 'null'
                       additionalProperties: {}
-                      nullable: true
-                  nullable: true
       parameters:
       - schema:
           type: string
@@ -392,6 +432,10 @@ paths:
           description: Default Response
       tags:
       - Cameras
+      summary: Update cameras by camera id
+      x-summary-source: derived
+      operationId: patchV1CamerasByCameraId
+      x-operation-id-source: derived
     delete:
       parameters:
       - schema:
@@ -405,6 +449,10 @@ paths:
           description: Default Response
       tags:
       - Cameras
+      summary: Delete cameras by camera id
+      x-summary-source: derived
+      operationId: deleteV1CamerasByCameraId
+      x-operation-id-source: derived
 components:
   securitySchemes:
     bearerAuth:

@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Pipeline Backend Admin Reference Measurements API
+  title: Pipeline Backend Reference Measurements API
   version: 0.1.0
 security:
 - bearerAuth: []
@@ -57,6 +57,10 @@ paths:
           description: Default Response
       tags:
       - Reference Measurements
+      summary: Create reference measurements
+      x-summary-source: derived
+      operationId: postV1ReferenceMeasurements
+      x-operation-id-source: derived
     get:
       parameters:
       - schema:
@@ -76,6 +80,10 @@ paths:
           description: Default Response
       tags:
       - Reference Measurements
+      summary: Get reference measurements
+      x-summary-source: derived
+      operationId: getV1ReferenceMeasurements
+      x-operation-id-source: derived
   /v1/reference-measurements/{id}:
     get:
       parameters:
@@ -90,6 +98,10 @@ paths:
           description: Default Response
       tags:
       - Reference Measurements
+      summary: Get reference measurements by id
+      x-summary-source: derived
+      operationId: getV1ReferenceMeasurementsById
+      x-operation-id-source: derived
     delete:
       parameters:
       - schema:
@@ -103,6 +115,10 @@ paths:
           description: Default Response
       tags:
       - Reference Measurements
+      summary: Delete reference measurements by id
+      x-summary-source: derived
+      operationId: deleteV1ReferenceMeasurementsById
+      x-operation-id-source: derived
 components:
   securitySchemes:
     bearerAuth:
