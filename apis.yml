@@ -51,7 +51,7 @@ tags:
 - Company
 - Logistics
 - Freight
-- Computer-Vision
+- Computer Vision
 - Warehouse
 - Supply Chain
 - Measurements
@@ -67,6 +67,7 @@ tags_raw:
 - Measurement
 - Cameras
 - Trucking
+- Computer-Vision
 apis:
 - aid: transload:transload-admin-api
   name: Transload Admin API
