@@ -1,21 +1,19 @@
-# Kin Score artifact — transload — 2026-08-27T132314
+# Kin Score artifact — transload — 2026-09-22T213221
 # The API Evangelist rating (https://github.com/api-evangelist/kin-score). Generated; do not edit.
 ---
 kin_score:
   slug: transload
-  schema_version: 0.15.1
-  scored_at: '2026-08-27'
-  run_ts: 2026-08-27T132314
-  composite: 30.2
+  schema_version: 0.22.0
+  scored_at: '2026-09-22'
+  run_ts: 2026-09-22T213221
+  composite: 28.8
   band: thin
   facets:
-    discoverability: 74.1
-    contract_quality: 40.2
-    governance: 16.7
+    discoverability: 68.5
+    contract_quality: 34.7
+    contract_governance: 4.5
     operational_transparency: 0.0
     developer_ergonomics: 35.1
-    commercial_clarity: 18.4
-    contract_governance: 16.7
     access_clarity: 18.4
   agent_readiness:
     score: 28.6
@@ -48,4 +46,4 @@ kin_score:
       total: 22
       derived: 0
       coverage: 0.0
-      callable: 100.0
+      callable: 0.0
